@@ -1,0 +1,690 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-transform: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    background: black;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: clamp(380px, 38%, 600px) 1fr;
+    grid-template-rows: 1fr;
+    gap: 1em;
+    height: 100vh;
+    width: 100%;
+    padding: clamp(20px, 3vw, 50px);
+}
+
+.left-container {
+    padding: 30px 35px 50px 35px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    background: linear-gradient(160deg, #a8a8a8 0%, #787878 100%);
+    overflow: hidden;
+    color: white;
+}
+
+.left-top {
+    line-height: normal;
+}
+
+.brand-name {
+    font-size: clamp(1.4rem, 2vw, 2.5rem);
+    font-weight: 700;
+}
+
+.brand-name::before {
+    content: "⊙";
+    display: inline-block;
+    margin-right: 10px;
+    font-size: clamp(1.4rem, 2vw, 2.5rem);
+}
+
+.brand-tagline {
+    font-size: clamp(1rem, 1.3vw, 1.5rem);
+    padding-top: 20px;
+}
+
+.left-container h1 {
+    font-size: clamp(2.5rem, 3.8vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero-desc {
+    font-size: clamp(1rem, 1.3vw, 1.5rem);
+    line-height: normal;
+    padding: 14px 0;
+}
+
+.left-container p {
+    font-size: clamp(1rem, 1.3vw, 1.5rem);
+}
+
+.Learn-M {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 3rem;
+    font-size: 1.1rem;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.img-and-text {
+    display: flex;
+    width: 100%;
+    margin-top: auto;
+    height: clamp(200px, 40%, 300px);
+    padding-top: 20px;
+}
+
+.img-and-text img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2em;
+}
+
+.Xpace {
+    width: 100%;
+    height: 100%;
+    padding: 5px 25px 15px 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.Xpace h3 {
+    font-size: 1.7rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Xpace p {
+    font-size: 1rem;
+    width: 100%;
+    text-align: left;
+    padding-top: 20px;
+}
+
+.Xpace p::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+}
+
+.btn-the-one {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.left-container-arrow {
+    font-size: 1.5rem;
+}
+
+/* ── Right container ── */
+.right-container {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr 1.2fr;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px;
+    grid-template-areas:
+        "box-1 box-1 box-1 box-1"
+        "box-2 box-3 box-3 box-4"
+        "box-5 box-5 box-6 box-6";
+    background: black;
+    height: 100%;
+    overflow: hidden;
+}
+
+.boxes {
+    border: none;
+}
+
+/* ── Box 1 ── */
+.box-1 {
+    grid-area: box-1;
+    background: linear-gradient(135deg, #c084fc, #a855f7, #d946ef, #c084fc);
+    background-size: 300% 300%;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px 0 20px;
+    overflow: hidden;
+}
+
+.four-lists a {
+    color: black;
+}
+
+.four-lists {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.four-lists ul {
+    display: flex;
+    width: 80%;
+    gap: clamp(20px, 9vw, 120px);
+}
+
+.four-lists button {
+    padding: 10px 28px;
+    border-radius: 24px;
+    border: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.552);
+}
+
+.box-one-texts {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+}
+
+.just-img {
+    width: 50%;
+    height: 100%;
+}
+
+.just-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0 20px 20px;
+    width: 70%;
+}
+
+.box-one-texts h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.box-one-texts h4 {
+    font-size: 2.2rem;
+    margin-top: 0;
+    line-height: 1;
+    margin-left: 40px;
+}
+
+.box-one-texts p {
+    font-size: 0.8rem;
+    margin-top: 8px;
+    margin-left: 80px;
+}
+
+.box-one-texts button {
+    width: fit-content;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 24px;
+    margin-top: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.552);
+    margin-left: 80px;
+    background: #adff2f;
+}
+
+.our {
+    color: white;
+}
+
+/* ── Box 2 ── */
+.box-2 {
+    grid-area: box-2;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    background: white;
+}
+
+.box-2 img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    object-position: 50% 25%;
+}
+
+/* ── Box 3 ── */
+.box-3 {
+    grid-area: box-3;
+    background: gray;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    position: relative;
+    perspective: 1200px;
+}
+
+.arrow {
+    position: absolute;
+    left: -15px;
+    top: 70%;
+    transform: translateY(-70%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid gray;
+}
+
+.box-3 h3 {
+    font-size: 2rem;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+}
+
+.box-3 h4 {
+    font-size: 1.8rem;
+    padding-left: 20px;
+}
+
+.box-3 h5 {
+    font-size: 1.2rem;
+    padding-left: 20px;
+}
+
+/* ── Box 4 ── */
+.box-4 {
+    grid-area: box-4;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    color: white;
+    background: #6528f7;
+}
+
+.box-4 img {
+    object-fit: cover;
+    width: 50%;
+    height: 100%;
+    object-position: -20px 40%;
+    flex-shrink: 0;
+}
+
+.box-4-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px 14px;
+}
+
+.box-4-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.box-4-role {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.box-4-bio {
+    font-size: 0.8rem;
+    opacity: 0.75;
+    line-height: 1.4;
+    margin-top: 4px;
+}
+
+.box-4-socials {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.box-4-social-link {
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.box-4-social-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.box-4-connect {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 8px;
+    opacity: 0.9;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.box-4-connect:hover {
+    opacity: 1;
+}
+
+/* ── Box 5 ── */
+.box-5 {
+    grid-area: box-5;
+    background: #f78536;
+    color: white;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.box-5 h2 {
+    font-size: clamp(1.5rem, 2.2vw, 2.5rem);
+}
+
+.btn-one {
+    width: fit-content;
+    padding: 17px 40px;
+    border: none;
+    border-radius: 36px;
+    color: white;
+    background: black;
+    font-size: 1.3rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-two {
+    width: fit-content;
+    padding: 17px 30px;
+    border: none;
+    border-radius: 24px;
+    color: white;
+    background: none;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 60px;
+    cursor: pointer;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.all-btn {
+    display: flex;
+}
+
+.arrow-up {
+    margin-left: 10px;
+    font-size: 3rem;
+}
+
+.orange {
+    color: rgb(255, 157, 0);
+}
+
+/* ── Box 6 ── */
+.box-6 {
+    grid-area: box-6;
+    background: #a2738c;
+    border-radius: 24px;
+    padding: 40px 40px 0 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.inside-box {
+    position: absolute;
+    top: 20px;
+    left: 80px;
+}
+
+.inside-box li {
+    font-size: 1.3rem;
+    line-height: 35px;
+}
+
+.inside-box::after {
+    content: "———";
+    font-size: 2rem;
+    display: block;
+}
+
+.black-box {
+    background: black;
+    height: 100%;
+    width: 100%;
+    border-radius: 24px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.black-box img {
+    object-fit: contain;
+    object-position: right;
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 18px;
+    left: 40px;
+}
+
+/* ── Keyframes ── */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px) scale(1.05); }
+    to   { opacity: 1; transform: translateX(0) scale(1.05); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes charReveal {
+    from { opacity: 0; transform: translateY(20px) rotateX(90deg); }
+    to   { opacity: 1; transform: translateY(0) rotateX(0); }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+}
+@keyframes text3D {
+    0%, 100% {
+        text-shadow:
+            1px 1px 0 #7c3aed,
+            2px 2px 0 #6d28d9,
+            3px 3px 0 #5b21b6,
+            4px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        text-shadow:
+            2px 2px 0 #7c3aed,
+            4px 4px 0 #6d28d9,
+            6px 6px 0 #5b21b6,
+            8px 8px 16px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* ── Load animations ── */
+.left-container { animation: fadeInUp 0.6s ease 0.1s both; }
+.box-1  { animation: gradientShift 6s ease infinite, fadeInUp 0.6s ease 0.15s both; }
+.box-2  { animation: fadeInUp 0.6s ease 0.25s both, float 3.5s ease-in-out 1.2s infinite; }
+.box-3  { animation: fadeInUp 0.6s ease 0.35s both; }
+.box-4  { animation: fadeInUp 0.6s ease 0.45s both, float 4s ease-in-out 0.8s infinite; }
+.box-5  { animation: fadeInUp 0.6s ease 0.55s both, float 3s ease-in-out 1.5s infinite; }
+.box-6  { animation: fadeInUp 0.6s ease 0.65s both, float 4.5s ease-in-out 0.5s infinite; }
+
+/* ── Float pauses on hover so it doesn't fight hover transforms ── */
+.box-2:hover,
+.box-4:hover,
+.box-5:hover,
+.box-6:hover {
+    animation-play-state: paused;
+}
+
+/* ── Girl image slide in ── */
+.just-img img { animation: slideInLeft 0.8s ease 0.5s both; }
+
+/* ── Char reveal (JS splits text into .char spans) ── */
+.char {
+    display: inline-block;
+    opacity: 0;
+    animation: charReveal 0.4s ease both;
+}
+
+/* ── 3D text on "Collaborate everywhere" ── */
+.box-one-texts h3 { animation: text3D 4s ease-in-out infinite; }
+.box-one-texts h4 { animation: text3D 4s ease-in-out 0.5s infinite; }
+
+/* ── Fade in remaining box-1 text ── */
+.box-one-texts p      { animation: fadeInUp 0.5s ease 0.9s both; }
+.box-one-texts button { animation: fadeInUp 0.5s ease 1s both; }
+
+/* ── Box transition for JS hover tilt ── */
+.boxes {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ── Button hover ── */
+button {
+    transition: transform 0.2s ease, filter 0.2s ease;
+    cursor: pointer;
+}
+button:hover {
+    transform: scale(1.06);
+    filter: brightness(1.1);
+}
+
+/* ── Flip card ── */
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.box-3:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.flip-front {
+    background: gray;
+    color: white;
+    padding: 10px;
+}
+
+.flip-back {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 14px;
+}
+
+.flip-back h3 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.flip-back p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.flip-back button {
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 24px;
+    background: none;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
