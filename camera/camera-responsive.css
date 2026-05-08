@@ -11,6 +11,7 @@
 }
 
 .right-side {
+    
     grid-template-columns: 1fr;
     /* 1 column — all boxes stacked */
     grid-template-rows: none;
@@ -60,7 +61,25 @@
     }
 
     .boxes {
-        height: 250px !important;
+        height: 250px ;
+    }
+    .box-3  {
+        height: 350px;
+    }
+    .box-4{
+        height: 350px;
+    }
+    .box-5{
+        height: 350px;
+    }
+    .box-6{
+        height: 300px;
+    }
+    .box-7{
+        height: 300px;
+    }
+    .box-8{
+        height: 300px;
     }
 }
 
