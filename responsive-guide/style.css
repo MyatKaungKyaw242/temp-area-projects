@@ -1,0 +1,2021 @@
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0f;
+    color: #e2e8f0;
+    line-height: 1.7;
+}
+
+code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+    background: rgba(99, 102, 241, 0.15);
+    color: #a5b4fc;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #0f0f1a 100%);
+    text-align: center;
+    padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 5vw, 3rem);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    padding: 4px 16px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.hero-tags span {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-family: 'Fira Code', monospace;
+}
+
+/* ============================================
+   LEARNING PATH
+   ============================================ */
+.learning-path {
+    background: #0d0d16;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 5vw, 3rem);
+}
+
+.lp-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lp-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.lp-badge {
+    display: inline-block;
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    padding: 4px 16px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.lp-header h2 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 800;
+    color: #f1f5f9;
+    margin-bottom: 0.5rem;
+}
+
+.lp-header p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.lp-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    counter-reset: steps;
+}
+
+.lp-step {
+    display: grid;
+    grid-template-columns: 3rem 1fr 2rem;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.lp-step:hover {
+    background: rgba(99, 102, 241, 0.08);
+    border-color: rgba(99, 102, 241, 0.35);
+    transform: translateX(6px);
+}
+
+.lp-step-last {
+    border-color: rgba(251, 191, 36, 0.2);
+    background: rgba(251, 191, 36, 0.04);
+}
+
+.lp-step-last:hover {
+    background: rgba(251, 191, 36, 0.08);
+    border-color: rgba(251, 191, 36, 0.4);
+}
+
+.lp-step-num {
+    width: 3rem;
+    height: 3rem;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #a5b4fc;
+    font-family: 'Fira Code', monospace;
+    flex-shrink: 0;
+}
+
+.lp-step-last .lp-step-num {
+    background: rgba(251, 191, 36, 0.15);
+    border-color: rgba(251, 191, 36, 0.3);
+    color: #fbbf24;
+}
+
+.lp-step-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #6366f1;
+    margin-bottom: 0.2rem;
+}
+
+.lp-step-last .lp-step-tag {
+    color: #fbbf24;
+}
+
+.lp-step-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 0.15rem;
+}
+
+.lp-step-desc {
+    font-size: 0.82rem;
+    color: #64748b;
+}
+
+.lp-arrow {
+    font-size: 1.1rem;
+    color: #374151;
+    text-align: center;
+    transition: color 0.2s;
+}
+
+.lp-step:hover .lp-arrow {
+    color: #6366f1;
+}
+
+.lp-step-last:hover .lp-arrow {
+    color: #fbbf24;
+}
+
+@media (max-width: 480px) {
+    .lp-step {
+        grid-template-columns: 2.5rem 1fr;
+    }
+    .lp-arrow { display: none; }
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.toc {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 15, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 0.8rem clamp(1rem, 5vw, 3rem);
+}
+
+.toc-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.toc-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.toc a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.toc a:hover {
+    color: #a5b4fc;
+    background: rgba(99, 102, 241, 0.15);
+}
+
+/* ============================================
+   MAIN & SECTIONS
+   ============================================ */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 5vw, 2rem);
+}
+
+.section {
+    margin-bottom: clamp(4rem, 8vw, 7rem);
+    position: relative;
+}
+
+.section-number {
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(99, 102, 241, 0.08);
+    position: absolute;
+    top: -1.5rem;
+    left: -1rem;
+    line-height: 1;
+    font-family: 'Fira Code', monospace;
+    pointer-events: none;
+    user-select: none;
+}
+
+.section-title {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 800;
+    color: #f1f5f9;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+    padding-bottom: 0.8rem;
+}
+
+.section-intro {
+    color: #94a3b8;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    margin-bottom: 2rem;
+    max-width: 70ch;
+}
+
+.sub-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin: 2.5rem 0 1rem;
+}
+
+/* ============================================
+   CODE BLOCKS
+   ============================================ */
+.code-block {
+    background: #0d1117;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    margin: 1.2rem 0;
+    overflow: hidden;
+}
+
+.code-label {
+    background: rgba(99, 102, 241, 0.15);
+    color: #a5b4fc;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    letter-spacing: 0.03em;
+}
+
+.code-block pre {
+    padding: 1.2rem 1.5rem;
+    overflow-x: auto;
+}
+
+.code-block code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.88rem;
+    background: none;
+    color: #e2e8f0;
+    padding: 0;
+    border-radius: 0;
+    line-height: 1.8;
+    display: block;
+    white-space: pre;
+}
+
+.code-block.small {
+    margin: 0.8rem 0 0;
+}
+
+.code-block.small pre {
+    padding: 0.8rem 1rem;
+}
+
+.code-block.small code {
+    font-size: 0.82rem;
+}
+
+/* ============================================
+   EXPLAIN GRID
+   ============================================ */
+.explain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.explain-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.2s ease;
+}
+
+.explain-card:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+}
+
+.explain-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.explain-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.5rem;
+}
+
+.explain-card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* ============================================
+   TIP BOX
+   ============================================ */
+.tip-box {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-left: 4px solid #6366f1;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+.tip-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.tip-box strong {
+    color: #a5b4fc;
+}
+
+/* ============================================
+   UNITS GRID
+   ============================================ */
+.units-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.unit-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.unit-card:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    background: rgba(99, 102, 241, 0.05);
+    transform: translateY(-2px);
+}
+
+.unit-name {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #6366f1;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+}
+
+.unit-full {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.8rem;
+}
+
+.unit-card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.unit-use {
+    font-size: 0.8rem;
+    color: #6ee7b7;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+/* ============================================
+   COMPARISON TABLE
+   ============================================ */
+.comparison-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.comparison-box h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 1.2rem;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.compare-table th {
+    text-align: left;
+    padding: 10px 16px;
+    color: #64748b;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.compare-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    color: #cbd5e1;
+    vertical-align: top;
+}
+
+.compare-table tr:last-child td {
+    border-bottom: none;
+}
+
+.compare-table tr:hover td {
+    background: rgba(99, 102, 241, 0.05);
+}
+
+/* ============================================
+   TWO COLUMN LAYOUT
+   ============================================ */
+.two-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.approach-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.approach-card.mobile-first {
+    border-color: rgba(99, 102, 241, 0.3);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.approach-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6ee7b7;
+    background: rgba(110, 231, 183, 0.1);
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-bottom: 0.8rem;
+}
+
+.approach-card h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.5rem;
+}
+
+.approach-card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* ============================================
+   BREAKPOINTS
+   ============================================ */
+.breakpoints {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.bp-item {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+}
+
+.bp-item:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.bp-icon { font-size: 1.3rem; }
+.bp-size { font-family: 'Fira Code', monospace; font-size: 0.82rem; color: #6366f1; }
+.bp-name { color: #cbd5e1; font-weight: 500; }
+.bp-item code { font-size: 0.78rem; background: rgba(99,102,241,0.12); color: #a5b4fc; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+
+@media (max-width: 600px) {
+    .bp-item {
+        grid-template-columns: 2rem 1fr;
+        grid-template-rows: auto auto;
+    }
+    .bp-name { grid-column: 2; }
+    .bp-size { grid-column: 1 / -1; }
+    .bp-item code { grid-column: 1 / -1; }
+}
+
+/* ============================================
+   CLAMP DEMO
+   ============================================ */
+.clamp-demo {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.clamp-demo h3 {
+    font-size: 0.85rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.5rem;
+}
+
+.clamp-text {
+    font-size: clamp(1.2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #a5b4fc;
+    margin-bottom: 1rem;
+}
+
+.clamp-padding {
+    display: inline-block;
+    padding: clamp(1rem, 5vw, 4rem);
+    background: rgba(99, 102, 241, 0.15);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* ============================================
+   FLEX DEMO
+   ============================================ */
+.flex-demo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1rem 0;
+    padding: 1.2rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px dashed rgba(99, 102, 241, 0.3);
+    border-radius: 10px;
+}
+
+.flex-item {
+    flex: 1 1 160px;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    color: #a5b4fc;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.demo-note {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-align: center;
+    margin-top: -0.3rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* ============================================
+   GRID DEMO
+   ============================================ */
+.grid-demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 0.8rem;
+    margin: 1rem 0;
+    padding: 1.2rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px dashed rgba(99, 102, 241, 0.3);
+    border-radius: 10px;
+}
+
+.grid-item {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    color: #c4b5fd;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   IMAGE DEMO
+   ============================================ */
+.image-demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.img-demo-box {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 1.2rem;
+}
+
+.img-demo-box p {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    margin: 0.8rem 0;
+    line-height: 1.5;
+}
+
+.img-cover-demo,
+.img-contain-demo {
+    width: 100%;
+    height: 140px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 0.03em;
+}
+
+.img-cover-demo {
+    background: linear-gradient(135deg, #1e3a5f, #6366f1);
+    color: #a5b4fc;
+    object-fit: cover;
+}
+
+.img-contain-demo {
+    background: rgba(255,255,255,0.03);
+    border: 2px dashed rgba(255,255,255,0.15);
+    color: #64748b;
+}
+
+/* ============================================
+   TIPS GRID
+   ============================================ */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.trick-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.trick-card:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.trick-num {
+    font-family: 'Fira Code', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgba(99, 102, 241, 0.2);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.trick-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.5rem;
+}
+
+.trick-card > p {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   CHEATSHEET
+   ============================================ */
+.cheatsheet-section {
+    background: rgba(255,255,255,0.01);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.cheatsheet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.cheat-card {
+    background: #0d1117;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 1.2rem;
+    transition: border-color 0.2s;
+}
+
+.cheat-card:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+}
+
+.cheat-card h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #a5b4fc;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ============================================
+   SUMMARY
+   ============================================ */
+.summary-section {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.05));
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 16px;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    margin-top: 4rem;
+}
+
+.summary-section h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    color: #f1f5f9;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 1.2rem;
+}
+
+.summary-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.summary-item p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+.summary-item strong {
+    color: #a5b4fc;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    color: #374151;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    margin-top: 3rem;
+}
+
+/* ============================================
+   CONCEPT BOX
+   ============================================ */
+.concept-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 4px solid #6366f1;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.concept-box.problem {
+    border-left-color: #ef4444;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.concept-box h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.8rem;
+}
+
+/* ============================================
+   SCREEN DEMO
+   ============================================ */
+.screen-demo {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.screen-phone, .screen-tablet, .screen-desktop {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    background: #111;
+    flex: 1 1 180px;
+}
+
+.screen-label {
+    background: rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.screen-content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.screen-nav-mobile {
+    background: #1e293b;
+    color: #94a3b8;
+    font-size: 0.7rem;
+    padding: 5px 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.screen-nav-tablet, .screen-nav-desktop {
+    background: #1e293b;
+    color: #94a3b8;
+    font-size: 0.65rem;
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+
+.screen-card-full {
+    background: #1e293b;
+    color: #64748b;
+    font-size: 0.7rem;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.screen-cards-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+}
+
+.screen-cards-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+}
+
+.screen-card-half, .screen-card-quarter {
+    background: #1e293b;
+    color: #64748b;
+    font-size: 0.6rem;
+    padding: 8px 4px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* ============================================
+   BOX SIZING DEMO
+   ============================================ */
+.box-sizing-demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.bs-wrong, .bs-right {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bs-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 8px 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.bs-label.bad {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.bs-label.good {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.bs-info {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: none;
+    padding: 1rem;
+    font-size: 0.88rem;
+    color: #94a3b8;
+    line-height: 1.8;
+    border-radius: 0 0 10px 10px;
+}
+
+.bs-info strong {
+    color: #f1f5f9;
+}
+
+/* ============================================
+   MISTAKES GRID
+   ============================================ */
+.mistakes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.mistake-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 1.3rem;
+    transition: border-color 0.2s;
+}
+
+.mistake-card:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.mistake-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 0.6rem;
+}
+
+.mistake-label.bad {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+}
+
+.mistake-label.good {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+}
+
+.mistake-card h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.4rem;
+}
+
+.mistake-card > p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+.mistake-fix {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+/* ============================================
+   STEPS LIST (TESTING)
+   ============================================ */
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 1.5rem 0;
+}
+
+.step-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+}
+
+.step-num {
+    width: 28px;
+    height: 28px;
+    background: rgba(99, 102, 241, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #a5b4fc;
+    flex-shrink: 0;
+    font-family: 'Fira Code', monospace;
+}
+
+.step-content {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.step-content strong {
+    color: #f1f5f9;
+}
+
+/* ============================================
+   CHECKLIST (TESTING)
+   ============================================ */
+.checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.check-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-size: 0.88rem;
+    color: #94a3b8;
+    transition: border-color 0.2s;
+}
+
+.check-item:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    color: #cbd5e1;
+}
+
+/* ============================================
+   BUILD STEPS (REAL WORLD PROJECT)
+   ============================================ */
+.build-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.build-step {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.build-step:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.build-step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(99, 102, 241, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.build-num {
+    background: rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.build-step-header h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f1f5f9;
+}
+
+.build-step .code-block {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* ============================================
+   MOBILE FIRST SECTION
+   ============================================ */
+.mf-philosophy {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.mf-quote {
+    display: inline-block;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-style: italic;
+    color: #a5b4fc;
+    border-left: 4px solid #6366f1;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    max-width: 680px;
+    background: rgba(99, 102, 241, 0.06);
+    border-radius: 0 10px 10px 0;
+    line-height: 1.7;
+}
+
+.mf-why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.mf-why-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 1.4rem;
+    transition: all 0.2s ease;
+}
+
+.mf-why-card:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    transform: translateY(-3px);
+}
+
+.mf-why-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.mf-why-card h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.5rem;
+}
+
+.mf-why-card p {
+    font-size: 0.87rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* Workflow steps */
+.mf-workflow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 1.5rem 0;
+}
+
+.mf-step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    transition: border-color 0.2s;
+}
+
+.mf-step:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.mf-step-arrow {
+    text-align: center;
+    color: rgba(99, 102, 241, 0.4);
+    font-size: 1.2rem;
+    padding: 0.2rem 0;
+    line-height: 1;
+}
+
+.mf-step-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.mf-step-content h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.4rem;
+}
+
+.mf-step-content p {
+    font-size: 0.87rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* Mindset box */
+.mf-mindset-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.mf-mindset-box h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 1.2rem;
+}
+
+.mf-mindset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.mf-mindset-item {
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+}
+
+.mf-mindset-item.wrong {
+    background: rgba(239, 68, 68, 0.06);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.mf-mindset-item.right {
+    background: rgba(34, 197, 94, 0.06);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.mf-mindset-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.8rem;
+}
+
+.mf-mindset-item.wrong .mf-mindset-label { color: #f87171; }
+.mf-mindset-item.right .mf-mindset-label { color: #4ade80; }
+
+.mf-mindset-item ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mf-mindset-item.wrong ul li::before { content: "❌ "; }
+.mf-mindset-item.right ul li::before { content: "✅ "; }
+
+.mf-mindset-item li {
+    font-size: 0.86rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+/* ============================================
+   DESIGN STEPS (HOW TO START MOBILE FIRST)
+   ============================================ */
+.design-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.design-step {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+.design-step:hover {
+    border-color: rgba(99, 102, 241, 0.35);
+}
+
+.design-step-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.2rem 1.5rem;
+    background: rgba(99, 102, 241, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.design-step-num {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: rgba(99, 102, 241, 0.4);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+}
+
+.design-step-title h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+}
+
+.design-step-sub {
+    font-size: 0.78rem;
+    color: #6366f1;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.design-step-body {
+    padding: 1.3rem 1.5rem;
+}
+
+.design-step-body > p {
+    font-size: 0.92rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+/* Action items list */
+.design-step-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    font-size: 0.87rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+.action-item::before {
+    content: '→';
+    color: #6366f1;
+    flex-shrink: 0;
+    font-weight: 700;
+}
+
+/* Priority list (content ranking) */
+.design-step-example {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin-top: 1rem;
+}
+
+.dse-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748b;
+    margin-bottom: 0.8rem;
+}
+
+.dse-priority-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.dse-item {
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.dse-item.rank-1 { background: rgba(251,191,36,0.15); color: #fbbf24; border-left: 3px solid #fbbf24; }
+.dse-item.rank-2 { background: rgba(99,102,241,0.12); color: #a5b4fc; border-left: 3px solid #6366f1; }
+.dse-item.rank-3 { background: rgba(99,102,241,0.08); color: #a5b4fc; border-left: 3px solid rgba(99,102,241,0.5); }
+.dse-item.rank-4 { background: rgba(255,255,255,0.03); color: #64748b; border-left: 3px solid rgba(255,255,255,0.1); }
+.dse-item.rank-5 { background: rgba(255,255,255,0.02); color: #475569; border-left: 3px solid rgba(255,255,255,0.06); }
+.dse-item.rank-low { background: rgba(255,255,255,0.01); color: #334155; border-left: 3px solid rgba(255,255,255,0.04); font-size: 0.82rem; }
+
+.dse-note {
+    font-size: 0.82rem;
+    color: #64748b;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Design checklist */
+.design-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 1rem;
+}
+
+.dcl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: default;
+}
+
+.dcl-item:hover {
+    border-color: rgba(34, 197, 94, 0.3);
+    background: rgba(34, 197, 94, 0.04);
+}
+
+.dcl-icon {
+    font-size: 1.1rem;
+    color: #6366f1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.dcl-item strong {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.2rem;
+}
+
+.dcl-item p {
+    font-size: 0.84rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Final test grid */
+.final-test-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.7rem;
+    margin-top: 1rem;
+}
+
+.ft-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.ft-item:hover {
+    border-color: rgba(99, 102, 241, 0.35);
+    transform: translateY(-2px);
+}
+
+.ft-size {
+    font-family: 'Fira Code', monospace;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #6366f1;
+    margin-bottom: 0.3rem;
+}
+
+.ft-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 0.4rem;
+}
+
+.ft-check {
+    font-size: 0.75rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* ============================================
+   SECTION 17 — CSS GRID AREAS
+   ============================================ */
+
+/* Grid area demo layout */
+.ga-demo-wrapper {
+    background: rgba(99, 102, 241, 0.05);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.ga-demo {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+        "header  header"
+        "sidebar main"
+        "footer  footer";
+    min-height: 220px;
+}
+
+.ga-header  { grid-area: header;  }
+.ga-sidebar { grid-area: sidebar; }
+.ga-main    { grid-area: main;    }
+.ga-footer  { grid-area: footer;  }
+
+.ga-header,
+.ga-sidebar,
+.ga-main,
+.ga-footer {
+    border-radius: 0.6rem;
+    padding: 0.75rem 1rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ga-header  { background: rgba(99,  102, 241, 0.25); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3); }
+.ga-sidebar { background: rgba(16,  185, 129, 0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.25); }
+.ga-main    { background: rgba(245, 158,  11, 0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.25); }
+.ga-footer  { background: rgba(239,  68,  68, 0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.2); }
+
+.ga-label {
+    text-align: center;
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-top: 1rem;
+}
+
+/* ============================================
+   SECTION 18 — REAL WORLD PAGE EXAMPLES
+   ============================================ */
+
+.rw-example {
+    background: rgba(15, 15, 25, 0.6);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.rw-layout-label {
+    font-size: 0.82rem;
+    color: #6366f1;
+    font-weight: 600;
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.75rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 0.4rem;
+    display: inline-block;
+}
+
+.rw-techniques {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.rw-tag {
+    font-size: 0.78rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    color: #a5b4fc;
+    font-weight: 500;
+}
+
+/* ============================================
+   SECTION 19 — TYPOGRAPHY SYSTEM
+   ============================================ */
+
+.type-scale-demo {
+    background: rgba(15, 15, 25, 0.6);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.type-row {
+    color: #e2e8f0;
+    line-height: 1.2;
+    font-weight: 600;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.type-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+.h1-demo { font-size: clamp(2rem, 5vw, 3.5rem); }
+.h2-demo { font-size: clamp(1.6rem, 4vw, 2.5rem); }
+.h3-demo { font-size: clamp(1.3rem, 3vw, 2rem); }
+.h4-demo { font-size: clamp(1.1rem, 2.5vw, 1.6rem); }
+.p-demo  { font-size: clamp(0.95rem, 1.5vw, 1.1rem); font-weight: 400; line-height: 1.7; color: #94a3b8; }
+
+/* ============================================
+   SECTION 20 — DARK MODE
+   ============================================ */
+
+.dm-preview-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.dm-card {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.dm-light {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dm-dark {
+    background: #1e1e2e;
+    border: 1px solid #2d2d3d;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dm-card-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.dm-light .dm-card-label { color: #6366f1; }
+.dm-dark  .dm-card-label { color: #818cf8; }
+
+.dm-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.dm-light .dm-card-title { color: #0f172a; }
+.dm-dark  .dm-card-title { color: #f1f5f9; }
+
+.dm-card-body {
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.dm-light .dm-card-body { color: #64748b; }
+.dm-dark  .dm-card-body { color: #94a3b8; }
+
+.dm-card-btn {
+    display: inline-block;
+    padding: 0.45rem 1.1rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    width: fit-content;
+    cursor: default;
+}
+
+.dm-light .dm-card-btn { background: #6366f1; color: #ffffff; }
+.dm-dark  .dm-card-btn { background: #818cf8; color: #0f172a; }
+
+/* ============================================
+   SECTION 21 — RESPONSIVE SPACING SYSTEM
+   ============================================ */
+
+.spacing-scale-demo {
+    background: rgba(15, 15, 25, 0.6);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.space-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.space-box {
+    height: 14px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #6366f1, #818cf8);
+    flex-shrink: 0;
+}
+
+.s1 { width: 4px; }
+.s2 { width: 8px; }
+.s3 { width: 12px; }
+.s4 { width: 16px; }
+.s5 { width: 24px; }
+.s6 { width: 36px; }
+.s7 { width: 52px; }
+.s8 { width: 72px; }
+
+.space-row span {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.82rem;
+    color: #94a3b8;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0f; }
+::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, 0.4); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.7); }
+
+/* ============================================
+   RESPONSIVE — TABLET
+   ============================================ */
+@media (max-width: 768px) {
+    .section-number {
+        font-size: 3.5rem;
+        top: -1rem;
+        left: -0.5rem;
+    }
+
+    .toc-label { display: none; }
+
+    .toc a {
+        font-size: 0.78rem;
+        padding: 3px 7px;
+    }
+
+    .compare-table th,
+    .compare-table td {
+        padding: 8px 10px;
+        font-size: 0.82rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE
+   ============================================ */
+@media (max-width: 480px) {
+    .hero-tags span {
+        font-size: 0.78rem;
+        padding: 4px 12px;
+    }
+
+    .section-number {
+        font-size: 2.5rem;
+    }
+
+    .code-block code {
+        font-size: 0.78rem;
+    }
+
+    .tip-box {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .cheatsheet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+}

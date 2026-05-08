@@ -1,0 +1,2967 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout — 0 to Hero Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-badge">0 to Hero — Complete Guide</div>
+        <h1>Responsive Layout</h1>
+        <p class="hero-sub">Everything you need to build websites that look perfect on every screen — from total beginner to professional level.</p>
+        <div class="hero-tags">
+            <span>What is Responsive?</span>
+            <span>@media</span>
+            <span>clamp()</span>
+            <span>%, vh, vw</span>
+            <span>Flexbox</span>
+            <span>Grid</span>
+            <span>Testing</span>
+        </div>
+    </header>
+
+    <!-- LEARNING PATH -->
+    <div class="learning-path">
+        <div class="lp-inner">
+            <div class="lp-header">
+                <span class="lp-badge">🗺️ Start Here — Follow in Order</span>
+                <h2>Your Step-by-Step Learning Path</h2>
+                <p>Each step builds on the previous one. Read them in order. Don't skip.</p>
+            </div>
+            <div class="lp-steps">
+
+                <a href="#what" class="lp-step">
+                    <div class="lp-step-num">1</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟢 Start Here — Beginner</div>
+                        <div class="lp-step-name">What is Responsive Design?</div>
+                        <div class="lp-step-desc">Understand the concept before touching any code</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#boxsizing" class="lp-step">
+                    <div class="lp-step-num">2</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟢 Beginner</div>
+                        <div class="lp-step-name">box-sizing: border-box</div>
+                        <div class="lp-step-desc">The one rule that fixes layouts instantly — always use it</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#viewport" class="lp-step">
+                    <div class="lp-step-num">3</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟢 Beginner</div>
+                        <div class="lp-step-name">The Viewport Meta Tag</div>
+                        <div class="lp-step-desc">The first line every responsive project must have</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#units" class="lp-step">
+                    <div class="lp-step-num">4</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟡 Intermediate</div>
+                        <div class="lp-step-name">Responsive Units</div>
+                        <div class="lp-step-desc">%, rem, vh, vw — stop using px for everything</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#media" class="lp-step">
+                    <div class="lp-step-num">5</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟡 Intermediate</div>
+                        <div class="lp-step-name">@media Queries</div>
+                        <div class="lp-step-desc">Change layout at different screen sizes</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#clamp" class="lp-step">
+                    <div class="lp-step-num">6</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟡 Intermediate</div>
+                        <div class="lp-step-name">clamp() — Fluid Sizing</div>
+                        <div class="lp-step-desc">Scale text and spacing without media queries</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#flexbox" class="lp-step">
+                    <div class="lp-step-num">7</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟡 Intermediate</div>
+                        <div class="lp-step-name">Flexbox for Responsive</div>
+                        <div class="lp-step-desc">Rows, stacking, wrapping — the most used layout tool</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#grid" class="lp-step">
+                    <div class="lp-step-num">8</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟡 Intermediate</div>
+                        <div class="lp-step-name">CSS Grid for Responsive</div>
+                        <div class="lp-step-desc">Auto-responsive grids with one line of CSS</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#images" class="lp-step">
+                    <div class="lp-step-num">9</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟡 Intermediate</div>
+                        <div class="lp-step-name">Responsive Images</div>
+                        <div class="lp-step-desc">Stop images from breaking your layout</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#nav" class="lp-step">
+                    <div class="lp-step-num">10</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟠 Advanced</div>
+                        <div class="lp-step-name">Responsive Navigation</div>
+                        <div class="lp-step-desc">Build a nav that collapses on mobile — every site needs this</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#variables" class="lp-step">
+                    <div class="lp-step-num">11</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟠 Advanced</div>
+                        <div class="lp-step-name">CSS Variables for Responsive</div>
+                        <div class="lp-step-desc">Change one variable — update the whole layout</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#overflow" class="lp-step">
+                    <div class="lp-step-num">12</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟠 Fix Common Bug</div>
+                        <div class="lp-step-name">The overflow-x Bug</div>
+                        <div class="lp-step-desc">The #1 mobile bug — horizontal scroll when it shouldn't exist</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#testing" class="lp-step">
+                    <div class="lp-step-num">13</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟠 Must Know</div>
+                        <div class="lp-step-name">How to Test Responsive</div>
+                        <div class="lp-step-desc">Use DevTools to check every device without owning them</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#mistakes" class="lp-step">
+                    <div class="lp-step-num">14</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🔴 Don't Do These</div>
+                        <div class="lp-step-name">Common Beginner Mistakes</div>
+                        <div class="lp-step-desc">9 mistakes every beginner makes — avoid all of them</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#project" class="lp-step">
+                    <div class="lp-step-num">15</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🏗️ Real World Build</div>
+                        <div class="lp-step-name">Build a Responsive Page</div>
+                        <div class="lp-step-desc">Step-by-step — put everything together in one real project</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#tips" class="lp-step">
+                    <div class="lp-step-num">16</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">💡 Pro Level</div>
+                        <div class="lp-step-name">Tips & Tricks</div>
+                        <div class="lp-step-desc">Professional patterns used in real projects</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#gridareas" class="lp-step">
+                    <div class="lp-step-num">17</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🟠 Advanced</div>
+                        <div class="lp-step-name">CSS Grid Areas</div>
+                        <div class="lp-step-desc">Name your layout zones — header, sidebar, main, footer</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#realworld" class="lp-step">
+                    <div class="lp-step-num">18</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🏗️ Real World</div>
+                        <div class="lp-step-name">Real World Page Examples</div>
+                        <div class="lp-step-desc">See how blog, portfolio, and product pages are built responsively</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#typography" class="lp-step">
+                    <div class="lp-step-num">19</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">💡 Pro Level</div>
+                        <div class="lp-step-name">Typography System</div>
+                        <div class="lp-step-desc">Build a fluid type scale — h1 to p that flows across every screen</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#darkmode" class="lp-step">
+                    <div class="lp-step-num">20</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🌙 Modern Feature</div>
+                        <div class="lp-step-name">Dark Mode with CSS</div>
+                        <div class="lp-step-desc">Automatically match the user's system theme — zero JavaScript</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#spacing" class="lp-step">
+                    <div class="lp-step-num">21</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">⚙️ System Thinking</div>
+                        <div class="lp-step-name">Responsive Spacing System</div>
+                        <div class="lp-step-desc">Consistent spacing that scales — never hardcode padding again</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#mobilefirst" class="lp-step">
+                    <div class="lp-step-num">22</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">🧠 Mindset</div>
+                        <div class="lp-step-name">Mobile First Mindset</div>
+                        <div class="lp-step-desc">Build with constraints first, freedom later — why this makes better layouts</div>
+                    </div>
+                    <div class="lp-arrow">→</div>
+                </a>
+
+                <a href="#cheatsheet" class="lp-step lp-step-last">
+                    <div class="lp-step-num">23</div>
+                    <div class="lp-step-info">
+                        <div class="lp-step-tag">⭐ Reference</div>
+                        <div class="lp-step-name">Cheatsheet</div>
+                        <div class="lp-step-desc">Bookmark this — everything in one place forever</div>
+                    </div>
+                    <div class="lp-arrow">⭐</div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY NAV -->
+    <nav class="toc">
+        <div class="toc-inner">
+            <span class="toc-label">Jump to:</span>
+            <a href="#what">What is it?</a>
+            <a href="#boxsizing">box-sizing</a>
+            <a href="#viewport">Viewport</a>
+            <a href="#units">Units</a>
+            <a href="#media">@media</a>
+            <a href="#clamp">clamp()</a>
+            <a href="#flexbox">Flexbox</a>
+            <a href="#grid">Grid</a>
+            <a href="#images">Images</a>
+            <a href="#nav">Nav</a>
+            <a href="#variables">Variables</a>
+            <a href="#overflow">overflow-x</a>
+            <a href="#testing">Testing</a>
+            <a href="#mistakes">Mistakes</a>
+            <a href="#project">Build</a>
+            <a href="#gridareas">Grid Areas</a>
+            <a href="#realworld">Real World</a>
+            <a href="#typography">Typography</a>
+            <a href="#darkmode">Dark Mode</a>
+            <a href="#spacing">Spacing</a>
+            <a href="#mobilefirst">Mobile First</a>
+            <a href="#cheatsheet">Cheatsheet</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ================================
+             STEP 1 — WHAT IS RESPONSIVE
+        ================================= -->
+        <section id="what" class="section">
+            <div class="section-number">01</div>
+            <h2 class="section-title">What is Responsive Design?</h2>
+            <p class="section-intro">Before writing a single line of code, understand what you're trying to achieve and why.</p>
+
+            <div class="concept-box">
+                <h3>The Simple Explanation</h3>
+                <p>Responsive design means your website <strong>automatically adjusts</strong> its layout, text size, and spacing depending on the screen size of the device viewing it.</p>
+                <br>
+                <p>Think of it like water — water takes the shape of whatever container it's in. A responsive website does the same thing with screens.</p>
+            </div>
+
+            <h3 class="sub-heading">Same website — 3 different screens</h3>
+            <div class="screen-demo">
+                <div class="screen-phone">
+                    <div class="screen-label">📱 Phone — 375px</div>
+                    <div class="screen-content">
+                        <div class="screen-nav-mobile">☰ Menu</div>
+                        <div class="screen-card-full">Card 1</div>
+                        <div class="screen-card-full">Card 2</div>
+                        <div class="screen-card-full">Card 3</div>
+                    </div>
+                </div>
+                <div class="screen-tablet">
+                    <div class="screen-label">📲 Tablet — 768px</div>
+                    <div class="screen-content">
+                        <div class="screen-nav-tablet">Logo &nbsp;&nbsp; Home &nbsp; About &nbsp; Contact</div>
+                        <div class="screen-cards-2">
+                            <div class="screen-card-half">Card 1</div>
+                            <div class="screen-card-half">Card 2</div>
+                            <div class="screen-card-half">Card 3</div>
+                            <div class="screen-card-half">Card 4</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="screen-desktop">
+                    <div class="screen-label">🖥️ Desktop — 1200px</div>
+                    <div class="screen-content">
+                        <div class="screen-nav-desktop">Logo &nbsp;&nbsp;&nbsp; Home &nbsp; About &nbsp; Work &nbsp; Contact &nbsp;&nbsp;&nbsp; Get Started</div>
+                        <div class="screen-cards-4">
+                            <div class="screen-card-quarter">Card 1</div>
+                            <div class="screen-card-quarter">Card 2</div>
+                            <div class="screen-card-quarter">Card 3</div>
+                            <div class="screen-card-quarter">Card 4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Why does it matter?</h3>
+            <div class="explain-grid">
+                <div class="explain-card">
+                    <div class="explain-icon">📊</div>
+                    <h4>60%+ of web traffic is mobile</h4>
+                    <p>More than half your visitors are on phones. A non-responsive site means a broken experience for most people.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">🔍</div>
+                    <h4>Google ranks mobile-first</h4>
+                    <p>Google uses mobile version of your site for ranking. Non-responsive sites rank lower in search results.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">💼</div>
+                    <h4>Every job requires it</h4>
+                    <p>Responsive design is not optional in the real world. Every web developer is expected to know this.</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">🧠</span>
+                <div>
+                    <strong>Key Mindset:</strong> Don't build a website for one screen size. Build a website that <em>works everywhere</em>. Think of your layout as flexible, not fixed.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 2 — BOX SIZING
+        ================================= -->
+        <section id="boxsizing" class="section">
+            <div class="section-number">02</div>
+            <h2 class="section-title">box-sizing: border-box</h2>
+            <p class="section-intro">This is the most important rule in responsive CSS. Without it, your widths won't work the way you expect — and you'll spend hours confused.</p>
+
+            <h3 class="sub-heading">The Problem — Default CSS behavior</h3>
+            <div class="concept-box problem">
+                <p>By default, when you set <code>width: 300px</code> on an element, the padding and border are added <strong>on top of</strong> that width. So the actual size ends up bigger than you set.</p>
+            </div>
+
+            <div class="box-sizing-demo">
+                <div class="bs-wrong">
+                    <div class="bs-label bad">❌ Default (content-box)</div>
+                    <div class="bs-info">
+                        width: 300px + padding: 20px + border: 2px<br>
+                        <strong>Actual size = 344px 😱</strong>
+                    </div>
+                </div>
+                <div class="bs-right">
+                    <div class="bs-label good">✅ border-box</div>
+                    <div class="bs-info">
+                        width: 300px (padding + border included INSIDE)<br>
+                        <strong>Actual size = exactly 300px ✓</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <div class="code-label">The fix — Always put this at the top of your CSS</div>
+                <pre><code>* {
+    box-sizing: border-box;
+}
+/* Now width means the TOTAL size including padding and border */
+/* This makes layouts predictable and easy to control */</code></pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-label">Real example — without vs with border-box</div>
+                <pre><code>/* ❌ Without border-box — OVERFLOWS the parent */
+.card {
+    width: 50%;
+    padding: 20px;
+    border: 2px solid black;
+    /* actual width = 50% + 40px + 4px = TOO WIDE */
+}
+
+/* ✅ With border-box — fits perfectly */
+* { box-sizing: border-box; }
+.card {
+    width: 50%;
+    padding: 20px;
+    border: 2px solid black;
+    /* actual width = exactly 50% */
+}</code></pre>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">⚡</span>
+                <div>
+                    <strong>Rule:</strong> Put <code>* &#123; box-sizing: border-box; &#125;</code> as the very first line in every CSS file you ever write. No exceptions.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 3 — VIEWPORT
+        ================================= -->
+        <section id="viewport" class="section">
+            <div class="section-number">03</div>
+            <h2 class="section-title">The Viewport Meta Tag</h2>
+            <p class="section-intro">Without this tag, your perfectly written responsive CSS will still look broken on mobile. Mobile browsers will zoom out and show a tiny desktop version.</p>
+
+            <div class="code-block">
+                <div class="code-label">HTML — Put this inside &lt;head&gt; — always</div>
+                <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+            </div>
+
+            <div class="explain-grid">
+                <div class="explain-card">
+                    <div class="explain-icon">📐</div>
+                    <h4>width=device-width</h4>
+                    <p>Tells the browser: "match the page width to the device's actual screen width." Without this, mobile shows a shrunken 960px desktop version.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">🔍</div>
+                    <h4>initial-scale=1.0</h4>
+                    <p>Sets zoom to 100% when the page loads. No zooming in or out automatically.</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">⚡</span>
+                <div>
+                    <strong>Most Common Beginner Mistake:</strong> Writing media queries but forgetting this tag. Your breakpoints will not trigger on mobile without it. Always check this first when media queries "don't work."
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 4 — UNITS
+        ================================= -->
+        <section id="units" class="section">
+            <div class="section-number">04</div>
+            <h2 class="section-title">Responsive Units</h2>
+            <p class="section-intro">The unit you choose makes or breaks your layout. <code>px</code> is fixed and doesn't adapt. These units do.</p>
+
+            <div class="units-grid">
+                <div class="unit-card">
+                    <div class="unit-name">%</div>
+                    <div class="unit-full">Percentage</div>
+                    <p>Relative to the <strong>parent element</strong>. Parent is 500px → child at 50% = 250px. Always adapts to parent size.</p>
+                    <div class="code-block small">
+                        <pre><code>.container { width: 100%; }
+.card { width: 48%; }</code></pre>
+                    </div>
+                    <div class="unit-use">✅ Widths, fluid layouts</div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-name">vh</div>
+                    <div class="unit-full">Viewport Height</div>
+                    <p>1vh = 1% of the screen height. 100vh = full screen height. Changes with screen size.</p>
+                    <div class="code-block small">
+                        <pre><code>.hero   { height: 100vh; }
+.section{ min-height: 50vh; }</code></pre>
+                    </div>
+                    <div class="unit-use">✅ Full-screen sections, hero</div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-name">vw</div>
+                    <div class="unit-full">Viewport Width</div>
+                    <p>1vw = 1% of screen width. 100vw = full width. Good for fluid text and full-bleed layouts.</p>
+                    <div class="code-block small">
+                        <pre><code>.banner { width: 100vw; }
+h1 { font-size: 5vw; }</code></pre>
+                    </div>
+                    <div class="unit-use">✅ Full-width elements, fluid text</div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-name">rem</div>
+                    <div class="unit-full">Root Em</div>
+                    <p>Always relative to the <code>html</code> font-size. Default is 16px. 1rem = 16px, 2rem = 32px. Predictable unlike em.</p>
+                    <div class="code-block small">
+                        <pre><code>html { font-size: 16px; }
+h1 { font-size: 2rem; }  /* 32px */
+p  { font-size: 1rem; }  /* 16px */</code></pre>
+                    </div>
+                    <div class="unit-use">✅ Font sizes, spacing, padding</div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-name">em</div>
+                    <div class="unit-full">Em</div>
+                    <p>Relative to the <strong>parent's font-size</strong>. Can multiply when nested — be careful.</p>
+                    <div class="code-block small">
+                        <pre><code>.parent { font-size: 20px; }
+.child  { font-size: 1.5em; } /* 30px */
+.nested { font-size: 1.5em; } /* 45px ⚠️ */</code></pre>
+                    </div>
+                    <div class="unit-use">✅ Button padding relative to text</div>
+                </div>
+
+                <div class="unit-card">
+                    <div class="unit-name">vmin</div>
+                    <div class="unit-full">Viewport Min</div>
+                    <p>Always equals the <strong>smaller</strong> of vh or vw. Great for elements that should fit in any orientation.</p>
+                    <div class="code-block small">
+                        <pre><code>/* Square that always fits screen */
+.box {
+    width: 50vmin;
+    height: 50vmin;
+}</code></pre>
+                    </div>
+                    <div class="unit-use">✅ Icons, avatars, squares</div>
+                </div>
+            </div>
+
+            <div class="comparison-box">
+                <h3>When to use which unit</h3>
+                <table class="compare-table">
+                    <thead>
+                        <tr><th>Unit</th><th>Use for</th><th>Avoid for</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>px</code></td><td>Borders, shadows, icons</td><td>Widths, font sizes, layout</td></tr>
+                        <tr><td><code>%</code></td><td>Widths, fluid containers</td><td>Font sizes (use rem)</td></tr>
+                        <tr><td><code>rem</code></td><td>Font sizes, margins, padding</td><td>Layout widths</td></tr>
+                        <tr><td><code>em</code></td><td>Button padding (scales with text)</td><td>Nested font sizes</td></tr>
+                        <tr><td><code>vh</code></td><td>Hero height, full sections</td><td>Font sizes alone</td></tr>
+                        <tr><td><code>vw</code></td><td>Full-width elements, fluid text</td><td>Heights</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 5 — MEDIA QUERIES
+        ================================= -->
+        <section id="media" class="section">
+            <div class="section-number">05</div>
+            <h2 class="section-title">@media Queries</h2>
+            <p class="section-intro">Media queries let you write CSS that <strong>only activates at certain screen sizes</strong>. This is how you completely change a layout for phone vs desktop.</p>
+
+            <div class="code-block">
+                <div class="code-label">Basic Syntax — Think of it as an "if statement" for screen size</div>
+                <pre><code>@media (max-width: 768px) {
+    /* This CSS only runs when screen is 768px or SMALLER */
+    .container {
+        flex-direction: column;
+    }
+}</code></pre>
+            </div>
+
+            <h3 class="sub-heading">Mobile First vs Desktop First — Which approach?</h3>
+            <div class="two-col">
+                <div class="approach-card mobile-first">
+                    <div class="approach-label">✅ Recommended — Mobile First</div>
+                    <h4>Write mobile styles first.<br>Add desktop styles after.</h4>
+                    <p>Use <code>min-width</code> — "apply this when screen is AT LEAST this wide."</p>
+                    <div class="code-block small">
+                        <pre><code>/* Base — mobile (no query needed) */
+.card { width: 100%; }
+
+/* Tablet and bigger */
+@media (min-width: 768px) {
+    .card { width: 48%; }
+}
+
+/* Desktop and bigger */
+@media (min-width: 1024px) {
+    .card { width: 30%; }
+}</code></pre>
+                    </div>
+                </div>
+                <div class="approach-card">
+                    <div class="approach-label">Also used — Desktop First</div>
+                    <h4>Write desktop styles first.<br>Override for mobile after.</h4>
+                    <p>Use <code>max-width</code> — "apply this when screen is NO BIGGER than this."</p>
+                    <div class="code-block small">
+                        <pre><code>/* Base — desktop */
+.card { width: 30%; }
+
+/* Tablet and smaller */
+@media (max-width: 1024px) {
+    .card { width: 48%; }
+}
+
+/* Mobile and smaller */
+@media (max-width: 768px) {
+    .card { width: 100%; }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Standard Breakpoints to memorize</h3>
+            <div class="breakpoints">
+                <div class="bp-item">
+                    <div class="bp-icon">📱</div>
+                    <div class="bp-size">320px – 480px</div>
+                    <div class="bp-name">Small Mobile</div>
+                    <code>max-width: 480px</code>
+                </div>
+                <div class="bp-item">
+                    <div class="bp-icon">📱</div>
+                    <div class="bp-size">481px – 768px</div>
+                    <div class="bp-name">Mobile</div>
+                    <code>max-width: 768px</code>
+                </div>
+                <div class="bp-item">
+                    <div class="bp-icon">📲</div>
+                    <div class="bp-size">769px – 1024px</div>
+                    <div class="bp-name">Tablet</div>
+                    <code>max-width: 1024px</code>
+                </div>
+                <div class="bp-item">
+                    <div class="bp-icon">💻</div>
+                    <div class="bp-size">1025px – 1280px</div>
+                    <div class="bp-name">Small Desktop</div>
+                    <code>max-width: 1280px</code>
+                </div>
+                <div class="bp-item">
+                    <div class="bp-icon">🖥️</div>
+                    <div class="bp-size">1281px+</div>
+                    <div class="bp-name">Large Desktop</div>
+                    <code>min-width: 1281px</code>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Other useful @media conditions</h3>
+            <div class="code-block">
+                <pre><code>/* Landscape orientation (phone rotated sideways) */
+@media (orientation: landscape) { }
+
+/* User has dark mode turned on */
+@media (prefers-color-scheme: dark) { }
+
+/* User prefers less animation (accessibility) */
+@media (prefers-reduced-motion: reduce) { }
+
+/* Only tablets — combine two conditions with AND */
+@media (min-width: 768px) and (max-width: 1024px) { }</code></pre>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">💡</span>
+                <div>
+                    <strong>Pro Tip:</strong> Don't pick breakpoints based on devices. Pick them based on where your design <em>breaks</em>. Slowly resize the browser window — add a breakpoint wherever the layout starts looking wrong.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 6 — CLAMP
+        ================================= -->
+        <section id="clamp" class="section">
+            <div class="section-number">06</div>
+            <h2 class="section-title">clamp() — Fluid Sizing</h2>
+            <p class="section-intro"><code>clamp()</code> automatically scales a value between a minimum and maximum based on screen size. No media query needed. It's like a smart range for any CSS value.</p>
+
+            <div class="code-block">
+                <div class="code-label">Syntax — 3 values</div>
+                <pre><code>property: clamp(minimum, preferred, maximum);
+/*                  ↑           ↑           ↑
+             never below    fluid value   never above
+             this value     (vw or %)     this value    */</code></pre>
+            </div>
+
+            <div class="explain-grid">
+                <div class="explain-card">
+                    <div class="explain-icon">🔽</div>
+                    <h4>Minimum</h4>
+                    <p>The absolute smallest value. Even on the tiniest screen, it won't go below this.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">↔️</div>
+                    <h4>Preferred (fluid)</h4>
+                    <p>Usually written in vw or %. This is the value that scales smoothly with the screen.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">🔼</div>
+                    <h4>Maximum</h4>
+                    <p>The absolute largest value. On a huge screen, it won't grow beyond this.</p>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Real examples you'll use daily</h3>
+            <div class="code-block">
+                <div class="code-label">Fluid Font Sizes — never too small, never too big</div>
+                <pre><code>h1 { font-size: clamp(1.8rem, 5vw, 4rem); }
+/* Mobile: 1.8rem (28px) | Tablet: ~5% of width | Desktop: 4rem (64px) */
+
+p  { font-size: clamp(1rem, 2vw, 1.25rem); }
+/* Never below 16px, never above 20px */</code></pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-label">Fluid Padding — section breathing room</div>
+                <pre><code>.section {
+    padding: clamp(2rem, 8vw, 6rem);
+    /* Phone: 32px | Growing with screen | Desktop: 96px */
+}</code></pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-label">Fluid Container Width</div>
+                <pre><code>.container {
+    width: clamp(320px, 90%, 1200px);
+    margin: 0 auto;
+    /* Min 320px wide | 90% of screen | Max 1200px wide */
+}</code></pre>
+            </div>
+
+            <div class="clamp-demo">
+                <h3>Live Demo — Resize the window and watch everything scale</h3>
+                <p class="clamp-text">This text uses clamp(1.2rem, 4vw, 3rem)</p>
+                <p class="clamp-padding">This box padding uses clamp(0.5rem, 5vw, 4rem)</p>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">🔥</span>
+                <div>
+                    <strong>clamp() vs @media:</strong> Use <code>clamp()</code> for text sizes and spacing that should scale smoothly. Use <code>@media</code> for layout changes like columns and hiding elements. Both together = perfect responsive design.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 7 — FLEXBOX
+        ================================= -->
+        <section id="flexbox" class="section">
+            <div class="section-number">07</div>
+            <h2 class="section-title">Flexbox for Responsive Layouts</h2>
+            <p class="section-intro">Flexbox is a 1D layout system — it arranges items in a row OR column. It's the most used tool for responsive layouts because it handles wrapping and spacing automatically.</p>
+
+            <h3 class="sub-heading">Pattern 1 — Cards that auto-wrap to next line</h3>
+            <div class="code-block">
+                <pre><code>.container {
+    display: flex;
+    flex-wrap: wrap;    /* items drop to next line when no space */
+    gap: 1rem;
+}
+.card {
+    flex: 1 1 250px;    /* grow, shrink, minimum 250px wide */
+}
+/* Result: 1 column on mobile → 2 on tablet → 4 on desktop
+   No media query needed — wraps automatically */</code></pre>
+            </div>
+            <div class="flex-demo">
+                <div class="flex-item">Card 1</div>
+                <div class="flex-item">Card 2</div>
+                <div class="flex-item">Card 3</div>
+                <div class="flex-item">Card 4</div>
+            </div>
+            <p class="demo-note">↑ Resize the window — cards wrap automatically</p>
+
+            <h3 class="sub-heading">Pattern 2 — Stack on mobile, side by side on desktop</h3>
+            <div class="code-block">
+                <pre><code>/* Mobile first approach */
+.layout {
+    display: flex;
+    flex-direction: column;  /* stack on mobile */
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .layout {
+        flex-direction: row;  /* side by side on tablet+ */
+    }
+}</code></pre>
+            </div>
+
+            <h3 class="sub-heading">Pattern 3 — order property (change order on mobile)</h3>
+            <div class="code-block">
+                <pre><code>/* Desktop: Image left, Text right */
+/* Mobile: Text on top, Image below */
+
+.image { order: 1; }  /* default */
+.text  { order: 2; }  /* default */
+
+@media (max-width: 768px) {
+    .image { order: 2; }  /* move image below on mobile */
+    .text  { order: 1; }  /* move text above on mobile */
+}</code></pre>
+            </div>
+
+            <h3 class="sub-heading">Key Flexbox properties for responsive</h3>
+            <table class="compare-table">
+                <thead>
+                    <tr><th>Property</th><th>What it does</th><th>When to use</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>flex-wrap: wrap</code></td><td>Items move to next line when no space</td><td>Auto-responsive card grids</td></tr>
+                    <tr><td><code>flex: 1 1 Xpx</code></td><td>Grow, shrink, with a minimum width</td><td>Fluid cards without media queries</td></tr>
+                    <tr><td><code>flex-direction: column</code></td><td>Stack items vertically</td><td>Mobile stacking</td></tr>
+                    <tr><td><code>order</code></td><td>Change visual order of items</td><td>Reorder content on mobile</td></tr>
+                    <tr><td><code>gap</code></td><td>Space between flex items</td><td>Always — replaces margins</td></tr>
+                    <tr><td><code>justify-content</code></td><td>Align items horizontally</td><td>Center, space buttons/nav</td></tr>
+                    <tr><td><code>align-items</code></td><td>Align items vertically</td><td>Vertical centering</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================================
+             STEP 8 — GRID
+        ================================= -->
+        <section id="grid" class="section">
+            <div class="section-number">08</div>
+            <h2 class="section-title">CSS Grid for Responsive Layouts</h2>
+            <p class="section-intro">Grid is a 2D layout system — rows AND columns at the same time. It has built-in responsive power that Flexbox doesn't have.</p>
+
+            <h3 class="sub-heading">The most powerful pattern — one line responsive grid</h3>
+            <div class="code-block">
+                <div class="code-label">No media query needed — fully automatic</div>
+                <pre><code>.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+/*
+   auto-fit          → create as many columns as will fit the screen
+   minmax(220px, 1fr) → each column is min 220px, max stretches to fill
+   Result            → 1 col on phone, 2 on tablet, 4+ on desktop
+*/</code></pre>
+            </div>
+
+            <div class="grid-demo">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+            </div>
+            <p class="demo-note">↑ Resize window — columns change automatically</p>
+
+            <h3 class="sub-heading">Grid with media queries — manual control</h3>
+            <div class="code-block">
+                <pre><code>.grid {
+    display: grid;
+    grid-template-columns: 1fr;          /* mobile: 1 column */
+    gap: 1rem;
+}
+@media (min-width: 600px) {
+    .grid { grid-template-columns: 1fr 1fr; }      /* 2 columns */
+}
+@media (min-width: 1024px) {
+    .grid { grid-template-columns: repeat(4, 1fr); } /* 4 columns */
+}</code></pre>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">💡</span>
+                <div>
+                    <strong>Grid vs Flexbox — simple rule:</strong><br>
+                    Use <strong>Grid</strong> → when you need rows AND columns (card grids, page layouts, bento grids)<br>
+                    Use <strong>Flexbox</strong> → when you need ONE direction (nav bar, button group, a stack of items)
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 9 — IMAGES
+        ================================= -->
+        <section id="images" class="section">
+            <div class="section-number">09</div>
+            <h2 class="section-title">Responsive Images</h2>
+            <p class="section-intro">Images are one of the most common things that break responsive layouts. These rules fix all of that.</p>
+
+            <h3 class="sub-heading">The Golden Rule — always add this globally</h3>
+            <div class="code-block">
+                <pre><code>img {
+    max-width: 100%;   /* image never overflows its container */
+    height: auto;      /* keeps correct aspect ratio */
+    display: block;    /* removes default bottom gap */
+}</code></pre>
+            </div>
+
+            <h3 class="sub-heading">object-fit — controlling how images fill their box</h3>
+            <div class="image-demo-grid">
+                <div class="img-demo-box">
+                    <div class="img-cover-demo">object-fit: cover</div>
+                    <p>Fills the box completely — crops if needed. Use for cards, hero images, thumbnails.</p>
+                    <div class="code-block small">
+                        <pre><code>img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}</code></pre>
+                    </div>
+                </div>
+                <div class="img-demo-box">
+                    <div class="img-contain-demo">object-fit: contain</div>
+                    <p>Shows the full image — may leave empty space. Use for logos and product images.</p>
+                    <div class="code-block small">
+                        <pre><code>img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">object-position — control which part of the image shows</h3>
+            <div class="code-block">
+                <pre><code>img {
+    object-fit: cover;
+    object-position: center;    /* default — center of image */
+    object-position: top;       /* show the top of the image */
+    object-position: bottom;    /* show the bottom */
+    object-position: 50% 20%;   /* custom — 50% left, 20% from top */
+}</code></pre>
+            </div>
+
+            <h3 class="sub-heading">aspect-ratio — maintain proportions without fixed height</h3>
+            <div class="code-block">
+                <pre><code>.card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;   /* always widescreen, no fixed height needed */
+    object-fit: cover;
+}
+
+.avatar {
+    width: 60px;
+    aspect-ratio: 1;         /* always a perfect square */
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 10 — RESPONSIVE NAV
+        ================================= -->
+        <section id="nav" class="section">
+            <div class="section-number">10</div>
+            <h2 class="section-title">Responsive Navigation</h2>
+            <p class="section-intro">Every real website has a navigation that collapses on mobile. This is one of the most common patterns you'll build. Here's how it works.</p>
+
+            <h3 class="sub-heading">The concept — what changes between mobile and desktop</h3>
+            <div class="explain-grid">
+                <div class="explain-card">
+                    <div class="explain-icon">📱</div>
+                    <h4>Mobile Nav</h4>
+                    <p>Logo on left, hamburger menu icon (☰) on right. Links are hidden. When you tap ☰, links appear vertically.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">🖥️</div>
+                    <h4>Desktop Nav</h4>
+                    <p>Logo on left, all links shown horizontally on right. No hamburger needed.</p>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">CSS-only approach (no JavaScript needed)</h3>
+            <div class="code-block">
+                <div class="code-label">HTML</div>
+                <pre><code>&lt;nav class="navbar"&gt;
+    &lt;div class="nav-logo"&gt;MyBrand&lt;/div&gt;
+
+    &lt;!-- Hidden checkbox trick --&gt;
+    &lt;input type="checkbox" id="menu-toggle" class="menu-toggle"&gt;
+    &lt;label for="menu-toggle" class="hamburger"&gt;☰&lt;/label&gt;
+
+    &lt;ul class="nav-links"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Work&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-label">CSS</div>
+                <pre><code>.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #111;
+}
+
+/* Hide checkbox — it's just for the toggle trick */
+.menu-toggle { display: none; }
+
+/* Desktop: links in a row */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+/* Hide hamburger on desktop */
+.hamburger { display: none; }
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+
+    /* Show hamburger icon */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    /* Hide links by default on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    /* Show links when checkbox is checked */
+    .menu-toggle:checked + .hamburger + .nav-links {
+        display: flex;
+    }
+
+    /* Make navbar wrap to allow links below */
+    .navbar { flex-wrap: wrap; }
+}</code></pre>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">💡</span>
+                <div>
+                    <strong>In real projects</strong> most developers use JavaScript to toggle a class like <code>.open</code> on the nav. But the CSS-only checkbox trick is great for learning and small projects. Both approaches are valid.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 11 — CSS VARIABLES
+        ================================= -->
+        <section id="variables" class="section">
+            <div class="section-number">11</div>
+            <h2 class="section-title">CSS Variables for Responsive</h2>
+            <p class="section-intro">CSS variables (also called custom properties) let you define values once and use them everywhere. When you change one variable at a breakpoint — your entire layout updates automatically.</p>
+
+            <div class="code-block">
+                <div class="code-label">Define variables on :root — available everywhere</div>
+                <pre><code>:root {
+    --spacing: 1rem;
+    --font-size-base: 1rem;
+    --columns: 1;
+    --container-padding: 1rem;
+}
+
+/* Use them */
+.section { padding: var(--spacing); }
+p { font-size: var(--font-size-base); }
+.grid { grid-template-columns: repeat(var(--columns), 1fr); }</code></pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-label">Change variables at breakpoints — everything updates at once</div>
+                <pre><code>/* Mobile */
+:root {
+    --spacing: 1rem;
+    --font-size-base: 0.95rem;
+    --columns: 1;
+    --container-padding: 1rem;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    :root {
+        --spacing: 1.5rem;
+        --font-size-base: 1rem;
+        --columns: 2;
+        --container-padding: 2rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    :root {
+        --spacing: 2rem;
+        --font-size-base: 1.1rem;
+        --columns: 4;
+        --container-padding: 3rem;
+    }
+}
+/* Now changing ONE breakpoint updates ALL elements at once */</code></pre>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">🔥</span>
+                <div>
+                    <strong>Why this is powerful:</strong> Instead of hunting through hundreds of lines of CSS to change spacing at different breakpoints, you change ONE variable and everything updates. This is how professional codebases are structured.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 12 — OVERFLOW-X BUG
+        ================================= -->
+        <section id="overflow" class="section">
+            <div class="section-number">12</div>
+            <h2 class="section-title">The overflow-x Bug</h2>
+            <p class="section-intro">This is the #1 most common mobile bug. Your page gets horizontal scroll even though nothing should be going off screen. Here's why it happens and how to fix it.</p>
+
+            <div class="concept-box problem">
+                <h3>What it looks like</h3>
+                <p>You build your page, open it on mobile, and you can scroll LEFT and RIGHT even though you didn't want that. Something is wider than the screen.</p>
+            </div>
+
+            <h3 class="sub-heading">Common causes</h3>
+            <div class="mistakes-grid">
+                <div class="mistake-card">
+                    <div class="mistake-label bad">❌ Cause 1</div>
+                    <h4>Fixed width wider than screen</h4>
+                    <div class="code-block small">
+                        <pre><code>/* Bad — 800px on a 375px phone */
+.banner { width: 800px; }</code></pre>
+                    </div>
+                    <div class="mistake-fix">
+                        <div class="mistake-label good">✅ Fix</div>
+                        <div class="code-block small">
+                            <pre><code>.banner { max-width: 100%; }</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="mistake-card">
+                    <div class="mistake-label bad">❌ Cause 2</div>
+                    <h4>Padding pushing content out</h4>
+                    <div class="code-block small">
+                        <pre><code>/* width: 100% + padding = overflow */
+.box {
+    width: 100%;
+    padding: 20px; /* pushes wider */
+}</code></pre>
+                    </div>
+                    <div class="mistake-fix">
+                        <div class="mistake-label good">✅ Fix</div>
+                        <div class="code-block small">
+                            <pre><code>/* box-sizing fixes this! */
+* { box-sizing: border-box; }</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="mistake-card">
+                    <div class="mistake-label bad">❌ Cause 3</div>
+                    <h4>Negative margin</h4>
+                    <div class="code-block small">
+                        <pre><code>.element {
+    margin-left: -20px; /* goes offscreen */
+}</code></pre>
+                    </div>
+                    <div class="mistake-fix">
+                        <div class="mistake-label good">✅ Fix</div>
+                        <div class="code-block small">
+                            <pre><code>/* Remove or clip it */
+body { overflow-x: hidden; }</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Nuclear fix — use when you can't find the cause</h3>
+            <div class="code-block">
+                <pre><code>html, body {
+    overflow-x: hidden;   /* hides anything going off the right side */
+    max-width: 100%;
+}
+
+/* Then find the culprit in DevTools and fix it properly */</code></pre>
+            </div>
+
+            <h3 class="sub-heading">How to find what's causing it — DevTools trick</h3>
+            <div class="code-block">
+                <div class="code-label">Paste this in your CSS temporarily — highlights every element</div>
+                <pre><code>* {
+    outline: 1px solid red;
+}
+/* Look for any red box going off screen — that's your culprit */
+/* Remove this after you find and fix the issue */</code></pre>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 13 — TESTING
+        ================================= -->
+        <section id="testing" class="section">
+            <div class="section-number">13</div>
+            <h2 class="section-title">How to Test Responsive Design</h2>
+            <p class="section-intro">You can't just build and hope it works. You need to actively test on different screen sizes while building. Here's exactly how to do it.</p>
+
+            <h3 class="sub-heading">Method 1 — Browser DevTools (use this every day)</h3>
+            <div class="steps-list">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <strong>Open DevTools</strong> — Press <code>F12</code> or right-click anywhere → "Inspect"
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <strong>Toggle Device Mode</strong> — Click the phone/tablet icon at the top of DevTools (or press <code>Ctrl + Shift + M</code>)
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <strong>Pick a device</strong> — Use the dropdown at the top to select iPhone 12, iPad, Galaxy S20, etc.
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <strong>Drag the handle</strong> — Grab the right edge of the screen preview and drag left/right to see any screen width
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">5</div>
+                    <div class="step-content">
+                        <strong>Watch for breakpoints</strong> — As you resize, your media queries will trigger. Watch how the layout changes.
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Method 2 — Resize your browser window</h3>
+            <div class="tip-box">
+                <span class="tip-icon">🖱️</span>
+                <div>
+                    Grab the right edge of your browser window and slowly drag it narrower. This is the quickest way to find where your layout breaks. Do this constantly while building.
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Method 3 — Test on a real phone</h3>
+            <div class="code-block">
+                <div class="code-label">If using VS Code with Live Server</div>
+                <pre><code>1. Open Live Server (bottom right — "Go Live")
+2. Note the IP address shown (e.g., 192.168.1.5:5500)
+3. Connect your phone to the same WiFi
+4. Open that IP address in your phone's browser
+5. Now you're viewing your actual page on a real device</code></pre>
+            </div>
+
+            <h3 class="sub-heading">What to check when testing</h3>
+            <div class="checklist">
+                <div class="check-item">☐ Text is readable — not too small, not overflowing</div>
+                <div class="check-item">☐ No horizontal scroll on mobile</div>
+                <div class="check-item">☐ Buttons are big enough to tap (minimum 44px × 44px)</div>
+                <div class="check-item">☐ Images don't overflow their containers</div>
+                <div class="check-item">☐ Navigation works on mobile</div>
+                <div class="check-item">☐ Content doesn't overlap</div>
+                <div class="check-item">☐ Spacing looks good — not too cramped, not too spread</div>
+                <div class="check-item">☐ Test landscape orientation too (phone rotated sideways)</div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 14 — COMMON MISTAKES
+        ================================= -->
+        <section id="mistakes" class="section">
+            <div class="section-number">14</div>
+            <h2 class="section-title">Common Beginner Mistakes</h2>
+            <p class="section-intro">These are the mistakes almost every beginner makes. Read all of them — and never make them.</p>
+
+            <div class="mistakes-grid">
+
+                <div class="mistake-card">
+                    <div class="mistake-label bad">❌ Mistake 1</div>
+                    <h4>Forgetting the viewport meta tag</h4>
+                    <p>Media queries work in the browser but not on mobile. You spend hours confused.</p>
+                    <div class="mistake-fix">
+                        <div class="mistake-label good">✅ Always do this</div>
+                        <div class="code-block small">
+                            <pre><code>&lt;meta name="viewport"
+  content="width=device-width,
+  initial-scale=1.0"&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mistake-card">
+                    <div class="mistake-label bad">❌ Mistake 2</div>
+                    <h4>Using px for font sizes</h4>
+                    <p>px doesn't respect user's accessibility settings (larger text preference). Users with vision issues can't scale your text.</p>
+                    <div class="mistake-fix">
+                        <div class="mistake-label good">✅ Use rem instead</div>
+                        <div class="code-block small">
+                            <pre><code>/* Bad */  p { font-size: 16px; }
+/* Good */ p { font-size: 1rem; }</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mistake-card">
+                    <div class="mistake-label bad">❌ Mistake 3</div>
+                    <h4>Fixed heights on containers</h4>
+                    <p>On mobile, text is larger. Fixed heights cut off content or cause overflow.</p>
+                    <div class="mistake-fix">
+                        <div class="mistake-label good">✅ Use min-height</div>
+                        <div class="code-block small">
+                            <pre><code>/* Bad */  .box { height: 300px; }
+/* Good */ .box { min-height: 300px; }</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mistake-card">
+                    <div class="mistake-label bad">❌ Mistake 4</div>
+                    <h4>Not using box-sizing: border-box</h4>
+                    <p>Padding and borders add to the width unexpectedly. Layout breaks in confusing ways.</p>
+                    <div class="mistake-fix">
+                        <div class="mistake-label good">✅ Always add this first</div>
+                        <div class="code-block small">
+                            <pre><code>* { box-sizing: border-box; }</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mistake-card">
+                    <div class="mistake-label bad">❌ Mistake 5</div>
+                    <h4>Building desktop only, then trying to "fix" mobile</h4>
+                    <p>Making a desktop layout responsive after the fact is 10x harder than building mobile first.</p>
+                    <div class="mistake-fix">
+                        <div class="mistake-label good">✅ Always start mobile</div>
+                        <div class="code-block small">
+                            <pre><code>/* Write mobile styles first */
+/* Add tablet/desktop with min-width */
+@media (min-width: 768px) { }</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mistake-card">
+                    <div class="mistake-label bad">❌ Mistake 6</div>
+                    <h4>Not testing while building</h4>
+                    <p>Building the whole page then testing = finding 20 problems at once. Test every time you add a section.</p>
+                    <div class="mistake-fix">
+                        <div class="mistake-label good">✅ Test constantly</div>
+                        <p style="font-size:0.85rem; color:#94a3b8; margin-top:0.5rem;">Press F12 → toggle device mode → keep it open while you code</p>
+                    </div>
+                </div>
+
+                <div class="mistake-card">
+                    <div class="mistake-label bad">❌ Mistake 7</div>
+                    <h4>Using width: 100vw on containers</h4>
+                    <p>100vw includes the scrollbar width. This causes horizontal overflow on pages with a vertical scrollbar.</p>
+                    <div class="mistake-fix">
+                        <div class="mistake-label good">✅ Use width: 100% instead</div>
+                        <div class="code-block small">
+                            <pre><code>/* Bad  */ .wrap { width: 100vw; }
+/* Good */ .wrap { width: 100%; }</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mistake-card">
+                    <div class="mistake-label bad">❌ Mistake 8</div>
+                    <h4>Too many breakpoints</h4>
+                    <p>Writing a breakpoint for every device (320px, 360px, 375px, 390px...) creates unmaintainable code.</p>
+                    <div class="mistake-fix">
+                        <div class="mistake-label good">✅ Use 3-4 breakpoints max</div>
+                        <p style="font-size:0.85rem; color:#94a3b8; margin-top:0.5rem;">480px, 768px, 1024px, 1280px — covers everything.</p>
+                    </div>
+                </div>
+
+                <div class="mistake-card">
+                    <div class="mistake-label bad">❌ Mistake 9</div>
+                    <h4>Tiny tap targets on mobile</h4>
+                    <p>Buttons and links too small to tap with a finger. Frustrating for users.</p>
+                    <div class="mistake-fix">
+                        <div class="mistake-label good">✅ Minimum 44×44px</div>
+                        <div class="code-block small">
+                            <pre><code>button, a {
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 15 — REAL WORLD BUILD
+        ================================= -->
+        <section id="project" class="section">
+            <div class="section-number">15</div>
+            <h2 class="section-title">Build a Responsive Page — Step by Step</h2>
+            <p class="section-intro">Now put everything together. Here's how to build a complete responsive page from scratch the professional way.</p>
+
+            <div class="build-steps">
+
+                <div class="build-step">
+                    <div class="build-step-header">
+                        <div class="build-num">Step 1</div>
+                        <h4>Start with the HTML boilerplate</h4>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="build-step">
+                    <div class="build-step-header">
+                        <div class="build-num">Step 2</div>
+                        <h4>Start your CSS with the non-negotiables</h4>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>/* Always start with these */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="build-step">
+                    <div class="build-step-header">
+                        <div class="build-num">Step 3</div>
+                        <h4>Build the layout structure</h4>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>/* Container — always limit max width */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sections — fluid spacing */
+section {
+    padding: clamp(3rem, 8vw, 6rem) 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="build-step">
+                    <div class="build-step-header">
+                        <div class="build-num">Step 4</div>
+                        <h4>Write mobile styles first (no media query)</h4>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>/* Mobile — base styles, no media query needed */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+h1 { font-size: clamp(1.8rem, 5vw, 3.5rem); }
+p  { font-size: clamp(1rem, 2vw, 1.15rem); }</code></pre>
+                    </div>
+                </div>
+
+                <div class="build-step">
+                    <div class="build-step-header">
+                        <div class="build-num">Step 5</div>
+                        <h4>Add tablet and desktop styles</h4>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>/* Tablet — 2 columns */
+@media (min-width: 768px) {
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .card {
+        flex: 1 1 calc(50% - 0.5rem);
+    }
+}
+
+/* Desktop — 3 or 4 columns */
+@media (min-width: 1024px) {
+    .card {
+        flex: 1 1 calc(33% - 0.7rem);
+    }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="build-step">
+                    <div class="build-step-header">
+                        <div class="build-num">Step 6</div>
+                        <h4>Test, find issues, fix them</h4>
+                    </div>
+                    <div class="code-block">
+                        <pre><code>/* Open DevTools → toggle device mode → test these: */
+
+/* 375px  — iPhone */
+/* 414px  — larger phone */
+/* 768px  — iPad */
+/* 1024px — small desktop */
+/* 1440px — standard desktop */
+
+/* For every issue you find: */
+/* 1. Identify which element is broken */
+/* 2. Check its width, padding, margin */
+/* 3. Add a media query or fix the base style */
+/* 4. Test again */</code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 16 — TIPS & TRICKS
+        ================================= -->
+        <section id="tips" class="section">
+            <div class="section-number">16</div>
+            <h2 class="section-title">Tips & Tricks</h2>
+            <p class="section-intro">Professional patterns that make responsive design faster and cleaner.</p>
+
+            <div class="tips-grid">
+
+                <div class="trick-card">
+                    <div class="trick-num">01</div>
+                    <h4>Max-width Container</h4>
+                    <p>Always limit content width so it doesn't stretch too wide on large screens. Centering with margin auto is the standard.</p>
+                    <div class="code-block small">
+                        <pre><code>.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="trick-card">
+                    <div class="trick-num">02</div>
+                    <h4>gap over margin</h4>
+                    <p>In flex/grid, use <code>gap</code> instead of margin. It only adds space between items — not on outside edges.</p>
+                    <div class="code-block small">
+                        <pre><code>/* ❌ Old way */
+.card { margin: 10px; }
+
+/* ✅ Better */
+.container { gap: 1rem; }</code></pre>
+                    </div>
+                </div>
+
+                <div class="trick-card">
+                    <div class="trick-num">03</div>
+                    <h4>Avoid fixed heights</h4>
+                    <p>Fixed heights break when content grows on mobile. Use min-height so content can always breathe.</p>
+                    <div class="code-block small">
+                        <pre><code>/* ❌ Breaks on mobile */
+.box { height: 300px; }
+
+/* ✅ Flexible */
+.box { min-height: 300px; }</code></pre>
+                    </div>
+                </div>
+
+                <div class="trick-card">
+                    <div class="trick-num">04</div>
+                    <h4>Scale all text at once</h4>
+                    <p>Change the html font-size at a breakpoint and all rem values update automatically.</p>
+                    <div class="code-block small">
+                        <pre><code>html { font-size: 14px; }
+
+@media (min-width: 768px) {
+    html { font-size: 16px; }
+}
+/* All rem values scale */</code></pre>
+                    </div>
+                </div>
+
+                <div class="trick-card">
+                    <div class="trick-num">05</div>
+                    <h4>Hide / Show at breakpoints</h4>
+                    <p>Some elements only make sense on certain screen sizes.</p>
+                    <div class="code-block small">
+                        <pre><code>.mobile-only { display: block; }
+.desktop-only { display: none; }
+
+@media (min-width: 768px) {
+    .mobile-only  { display: none; }
+    .desktop-only { display: block; }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="trick-card">
+                    <div class="trick-num">06</div>
+                    <h4>overflow: hidden on image cards</h4>
+                    <p>When using border-radius or zoom on hover — overflow hidden clips the image to the card shape.</p>
+                    <div class="code-block small">
+                        <pre><code>.card {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.card img { transition: transform 0.3s; }
+.card:hover img { transform: scale(1.1); }</code></pre>
+                    </div>
+                </div>
+
+                <div class="trick-card">
+                    <div class="trick-num">07</div>
+                    <h4>ch unit for readable text</h4>
+                    <p>ch = width of one "0" character. Perfect for controlling line length for readability.</p>
+                    <div class="code-block small">
+                        <pre><code>p {
+    max-width: 65ch;
+    /* Optimal reading: 45–75 chars */
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="trick-card">
+                    <div class="trick-num">08</div>
+                    <h4>aspect-ratio for consistent cards</h4>
+                    <p>Instead of fixed height, use aspect-ratio to keep proportions consistent at any screen size.</p>
+                    <div class="code-block small">
+                        <pre><code>.card-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}</code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 17 — CSS GRID AREAS
+        ================================= -->
+        <section id="gridareas" class="section">
+            <div class="section-number">17</div>
+            <h2 class="section-title">CSS Grid Areas</h2>
+            <p class="section-intro">Grid areas let you <strong>name zones</strong> in your layout — header, sidebar, main, footer — then rearrange them at different breakpoints by rewriting a simple map.</p>
+
+            <div class="concept-box">
+                <h3>Why Grid Areas are Powerful</h3>
+                <p>Instead of counting columns and spans, you <em>draw</em> your layout with words. Then at a different screen size, you redraw it — the actual HTML order never changes.</p>
+            </div>
+
+            <h3 class="sub-heading">How to use grid-template-areas</h3>
+            <div class="code-block">
+                <pre><code>/* ✅ Step 1 — Name each child with grid-area */
+.header  { grid-area: header;  }
+.sidebar { grid-area: sidebar; }
+.main    { grid-area: main;    }
+.footer  { grid-area: footer;  }
+
+/* ✅ Step 2 — Draw the layout on the parent */
+.page {
+    display: grid;
+    gap: 1rem;
+
+    /* Mobile: everything stacked */
+    grid-template-areas:
+        "header"
+        "main"
+        "sidebar"
+        "footer";
+}
+
+/* ✅ Step 3 — Redraw at larger screens */
+@media (min-width: 768px) {
+    .page {
+        grid-template-columns: 250px 1fr;
+        grid-template-areas:
+            "header  header"
+            "sidebar main"
+            "footer  footer";
+    }
+}
+
+@media (min-width: 1200px) {
+    .page {
+        grid-template-columns: 220px 1fr 220px;
+        grid-template-areas:
+            "header  header   header"
+            "sidebar main     aside"
+            "footer  footer   footer";
+    }
+}</code></pre>
+            </div>
+
+            <h3 class="sub-heading">Live Layout Map — see the areas</h3>
+            <div class="ga-demo-wrapper">
+                <div class="ga-demo">
+                    <div class="ga-header">header</div>
+                    <div class="ga-sidebar">sidebar</div>
+                    <div class="ga-main">main</div>
+                    <div class="ga-footer">footer</div>
+                </div>
+                <div class="ga-label">Desktop layout — 2 columns</div>
+            </div>
+
+            <h3 class="sub-heading">Rules to remember</h3>
+            <div class="explain-grid">
+                <div class="explain-card">
+                    <div class="explain-icon">🔤</div>
+                    <h4>Every row must have same column count</h4>
+                    <p>If your grid has 3 columns, every row in <code>grid-template-areas</code> must list exactly 3 names (or dots for empty cells).</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">➕</div>
+                    <h4>Span with repeated names</h4>
+                    <p>Write the same name multiple times in a row to span columns: <code>"header header header"</code> makes header span 3 columns.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">⬜</div>
+                    <h4>Empty cells use a dot</h4>
+                    <p>Use <code>.</code> for an empty cell: <code>"sidebar . main"</code> leaves the middle column empty.</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">💡</span>
+                <div>
+                    <strong>Pro Tip:</strong> Grid areas are perfect for page-level layout (the big skeleton). Use Flexbox inside each area for the content. This combination covers 90% of all real layouts.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 18 — REAL WORLD PAGE EXAMPLES
+        ================================= -->
+        <section id="realworld" class="section">
+            <div class="section-number">18</div>
+            <h2 class="section-title">Real World Page Examples</h2>
+            <p class="section-intro">See how professional developers structure three of the most common page types — and which CSS techniques they use at each breakpoint.</p>
+
+            <h3 class="sub-heading">Example 1 — Blog / Article Page</h3>
+            <div class="rw-example">
+                <div class="rw-layout-label">Layout: Centered single column → Two column with sidebar</div>
+                <div class="code-block">
+                    <pre><code>/* Mobile — single column */
+.blog-layout {
+    display: grid;
+    gap: 2rem;
+    grid-template-areas:
+        "article"
+        "sidebar";
+}
+
+/* Desktop — article + sidebar */
+@media (min-width: 1024px) {
+    .blog-layout {
+        grid-template-columns: 1fr 300px;
+        grid-template-areas: "article sidebar";
+    }
+}
+
+/* Article text — readable width */
+.article-body {
+    max-width: 70ch;    /* never let text stretch too wide */
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.8;
+}</code></pre>
+                </div>
+                <div class="rw-techniques">
+                    <span class="rw-tag">Grid Areas</span>
+                    <span class="rw-tag">clamp()</span>
+                    <span class="rw-tag">ch unit</span>
+                    <span class="rw-tag">Mobile First</span>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Example 2 — Portfolio / Gallery Page</h3>
+            <div class="rw-example">
+                <div class="rw-layout-label">Layout: 1 col → 2 col → 3 col auto grid</div>
+                <div class="code-block">
+                    <pre><code>/* Auto-responsive grid — no media queries needed */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+/* Card image keeps ratio on all screens */
+.portfolio-card {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.portfolio-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.portfolio-card:hover img {
+    transform: scale(1.05);
+}</code></pre>
+                </div>
+                <div class="rw-techniques">
+                    <span class="rw-tag">auto-fit + minmax</span>
+                    <span class="rw-tag">aspect-ratio</span>
+                    <span class="rw-tag">clamp() gap</span>
+                    <span class="rw-tag">object-fit</span>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Example 3 — Product / Landing Page</h3>
+            <div class="rw-example">
+                <div class="rw-layout-label">Layout: Hero → Features grid → Testimonials → CTA</div>
+                <div class="code-block">
+                    <pre><code>/* Hero — text stacks on mobile, side-by-side on desktop */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(3rem, 10vh, 8rem) 1.5rem;
+}
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        gap: 3rem;
+    }
+}
+
+/* Features — 1 → 2 → 3 columns */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+/* CTA section fills viewport height on desktop */
+.cta-section {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1.5rem;
+}</code></pre>
+                </div>
+                <div class="rw-techniques">
+                    <span class="rw-tag">Flexbox direction</span>
+                    <span class="rw-tag">auto-fit grid</span>
+                    <span class="rw-tag">clamp() padding</span>
+                    <span class="rw-tag">min-height vh</span>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">🧠</span>
+                <div>
+                    <strong>Pattern recognition:</strong> Notice that all three examples follow the same pattern — stack on mobile, expand on larger screens. Once you internalize this pattern, any layout becomes predictable.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 19 — TYPOGRAPHY SYSTEM
+        ================================= -->
+        <section id="typography" class="section">
+            <div class="section-number">19</div>
+            <h2 class="section-title">Typography System</h2>
+            <p class="section-intro">A typography system means your <strong>heading sizes, paragraph sizes, and spacing all scale together</strong> across every screen — no individual font-size overrides at every breakpoint.</p>
+
+            <div class="concept-box">
+                <h3>The Problem with Hardcoding Font Sizes</h3>
+                <p>If you write <code>h1 { font-size: 64px; }</code>, that looks great on a wide desktop — but it overflows a 375px phone screen. You'd need a media query for every heading, on every breakpoint. That's 20+ lines of CSS just for font sizes.</p>
+                <br>
+                <p><strong>The solution:</strong> Use <code>clamp()</code> to define a fluid range — minimum size on mobile, maximum size on desktop, fluid in between.</p>
+            </div>
+
+            <h3 class="sub-heading">The Complete Fluid Type Scale</h3>
+            <div class="code-block">
+                <pre><code>/* ============================================
+   FLUID TYPOGRAPHY SYSTEM
+   Format: clamp(min, fluid, max)
+   — min: smallest allowed size (mobile)
+   — fluid: scales with viewport width
+   — max: largest allowed size (desktop)
+   ============================================ */
+
+:root {
+    --text-xs:   clamp(0.75rem,  1vw,   0.875rem);
+    --text-sm:   clamp(0.875rem, 1.5vw, 1rem);
+    --text-base: clamp(1rem,     2vw,   1.125rem);
+    --text-lg:   clamp(1.125rem, 2.5vw, 1.375rem);
+    --text-xl:   clamp(1.25rem,  3vw,   1.75rem);
+    --text-2xl:  clamp(1.5rem,   4vw,   2.25rem);
+    --text-3xl:  clamp(1.875rem, 5vw,   3rem);
+    --text-4xl:  clamp(2.25rem,  6vw,   4rem);
+}
+
+/* Apply to elements */
+h1 { font-size: var(--text-4xl); line-height: 1.1; }
+h2 { font-size: var(--text-3xl); line-height: 1.2; }
+h3 { font-size: var(--text-2xl); line-height: 1.3; }
+h4 { font-size: var(--text-xl);  line-height: 1.4; }
+h5 { font-size: var(--text-lg);  line-height: 1.5; }
+p  { font-size: var(--text-base); line-height: 1.7; }
+small { font-size: var(--text-sm); }</code></pre>
+            </div>
+
+            <h3 class="sub-heading">See it in action — fluid scale preview</h3>
+            <div class="type-scale-demo">
+                <div class="type-row h1-demo">H1 — Page Title (clamps 2.25rem → 4rem)</div>
+                <div class="type-row h2-demo">H2 — Section Heading (clamps 1.875rem → 3rem)</div>
+                <div class="type-row h3-demo">H3 — Sub Heading (clamps 1.5rem → 2.25rem)</div>
+                <div class="type-row h4-demo">H4 — Card Title (clamps 1.25rem → 1.75rem)</div>
+                <div class="type-row p-demo">Paragraph — body text flows at a comfortable reading size on every screen without a single media query</div>
+            </div>
+
+            <h3 class="sub-heading">Line height and max-width matter too</h3>
+            <div class="explain-grid">
+                <div class="explain-card">
+                    <div class="explain-icon">📏</div>
+                    <h4>line-height for headings vs body</h4>
+                    <p>Headings need tight line-height (1.0–1.2). Body text needs loose line-height (1.6–1.8). Mixing these up makes text feel wrong.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">📐</div>
+                    <h4>max-width: 65ch on paragraphs</h4>
+                    <p>Research shows 45–75 characters per line is optimal for reading. <code>max-width: 65ch</code> enforces this on every screen size automatically.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">🎨</div>
+                    <h4>font-weight contrast</h4>
+                    <p>Use heavy weight (700–900) for headings and normal (400) for body. The contrast creates hierarchy that guides the reader's eye.</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">💡</span>
+                <div>
+                    <strong>Quick win:</strong> Copy the <code>:root</code> type scale above into every project. Apply the variables to h1–p. Your typography will look professional and work on every screen — instantly.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 20 — DARK MODE
+        ================================= -->
+        <section id="darkmode" class="section">
+            <div class="section-number">20</div>
+            <h2 class="section-title">Dark Mode with CSS</h2>
+            <p class="section-intro">Modern operating systems let users choose dark or light mode. CSS can <strong>detect this preference automatically</strong> and switch your colors — zero JavaScript required.</p>
+
+            <div class="concept-box">
+                <h3>How it works</h3>
+                <p>The media query <code>@media (prefers-color-scheme: dark)</code> fires when the user's OS is in dark mode. Combined with CSS variables, you can switch your entire color palette in one place.</p>
+            </div>
+
+            <h3 class="sub-heading">The right way — CSS variables + media query</h3>
+            <div class="code-block">
+                <pre><code>/* ============================================
+   DARK MODE SYSTEM
+   — Define colors as variables in :root (light)
+   — Override only the variables in dark mode
+   — Everything that uses the variable updates
+   ============================================ */
+
+:root {
+    /* Light mode colors (default) */
+    --bg:          #ffffff;
+    --bg-secondary:#f8fafc;
+    --surface:     #f1f5f9;
+    --text:        #0f172a;
+    --text-muted:  #64748b;
+    --border:      #e2e8f0;
+    --accent:      #6366f1;
+    --accent-hover:#4f46e5;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark mode — just override the variables */
+        --bg:          #0a0a0f;
+        --bg-secondary:#111118;
+        --surface:     #1e1e2e;
+        --text:        #f1f5f9;
+        --text-muted:  #94a3b8;
+        --border:      #2d2d3d;
+        --accent:      #818cf8;
+        --accent-hover:#6366f1;
+    }
+}
+
+/* ✅ Use variables everywhere — never hardcode colors */
+body            { background: var(--bg); color: var(--text); }
+.card           { background: var(--surface); border: 1px solid var(--border); }
+.muted-text     { color: var(--text-muted); }
+.btn-primary    { background: var(--accent); }
+.btn-primary:hover { background: var(--accent-hover); }</code></pre>
+            </div>
+
+            <h3 class="sub-heading">Light vs Dark — side by side</h3>
+            <div class="dm-preview-row">
+                <div class="dm-card dm-light">
+                    <div class="dm-card-label">☀️ Light Mode</div>
+                    <div class="dm-card-title">Card Title</div>
+                    <div class="dm-card-body">This is body text. It reads well on a white background with dark text.</div>
+                    <div class="dm-card-btn">Learn More</div>
+                </div>
+                <div class="dm-card dm-dark">
+                    <div class="dm-card-label">🌙 Dark Mode</div>
+                    <div class="dm-card-title">Card Title</div>
+                    <div class="dm-card-body">Same card. Same HTML. CSS variables switched automatically.</div>
+                    <div class="dm-card-btn">Learn More</div>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Manual toggle option (with JavaScript)</h3>
+            <div class="code-block">
+                <pre><code>/* Add a data-theme attribute to html element */
+[data-theme="dark"] {
+    --bg:    #0a0a0f;
+    --text:  #f1f5f9;
+    /* ... rest of dark vars */
+}
+
+/* JavaScript toggle */
+const toggle = document.querySelector('#theme-btn');
+toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    document.documentElement.setAttribute(
+        'data-theme',
+        current === 'dark' ? 'light' : 'dark'
+    );
+});</code></pre>
+            </div>
+
+            <div class="explain-grid">
+                <div class="explain-card">
+                    <div class="explain-icon">✅</div>
+                    <h4>Works automatically</h4>
+                    <p>The OS media query fires with no user interaction. Users who prefer dark mode get it instantly, without clicking anything.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">🔄</div>
+                    <h4>One change updates everything</h4>
+                    <p>Because all colors are variables, switching dark mode is just overriding a dozen variables — not hunting down every hardcoded color in the file.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">🚫</div>
+                    <h4>Common mistake</h4>
+                    <p>Hardcoding colors directly in components (<code>background: white</code>) means they won't update in dark mode. Always use <code>var(--bg)</code> style references.</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">🌙</span>
+                <div>
+                    <strong>Best practice:</strong> Set up your CSS variable color system on day 1 of every project. Dark mode is free once all your colors go through variables. Retrofitting it later is painful.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 21 — RESPONSIVE SPACING SYSTEM
+        ================================= -->
+        <section id="spacing" class="section">
+            <div class="section-number">21</div>
+            <h2 class="section-title">Responsive Spacing System</h2>
+            <p class="section-intro">Consistent spacing is what separates an amateur layout from a professional one. A spacing system means <strong>you define your scale once and use names, never magic numbers</strong>.</p>
+
+            <div class="concept-box">
+                <h3>The Problem with Magic Numbers</h3>
+                <p>When you write <code>padding: 37px</code> or <code>margin: 23px</code>, there's no system — it's just a number you guessed. When you come back a week later, nothing matches anything else. The spacing feels inconsistent and random.</p>
+                <br>
+                <p><strong>The solution:</strong> Define a spacing scale using CSS variables. Use only those values. Everything aligns perfectly because everything shares the same scale.</p>
+            </div>
+
+            <h3 class="sub-heading">The Spacing Scale</h3>
+            <div class="code-block">
+                <pre><code>/* ============================================
+   RESPONSIVE SPACING SYSTEM
+   Based on a 4px/0.25rem base unit
+   Scale: 4 → 8 → 12 → 16 → 24 → 32 → 48 → 64 → 96
+   ============================================ */
+
+:root {
+    --space-1:  0.25rem;   /*  4px — tiny gaps */
+    --space-2:  0.5rem;    /*  8px — icon spacing */
+    --space-3:  0.75rem;   /* 12px — tight padding */
+    --space-4:  1rem;      /* 16px — standard gap */
+    --space-5:  1.5rem;    /* 24px — card padding */
+    --space-6:  2rem;      /* 32px — section gap */
+    --space-7:  3rem;      /* 48px — large section */
+    --space-8:  4rem;      /* 64px — hero padding */
+    --space-9:  6rem;      /* 96px — full section */
+
+    /* Semantic aliases — use these in components */
+    --padding-card:     var(--space-5);   /* 24px */
+    --padding-section:  var(--space-8);   /* 64px */
+    --gap-cards:        var(--space-4);   /* 16px */
+    --gap-sections:     var(--space-7);   /* 48px */
+}
+
+/* Scale up on larger screens */
+@media (min-width: 768px) {
+    :root {
+        --space-6:  2.5rem;    /* 40px */
+        --space-7:  4rem;      /* 64px */
+        --space-8:  5rem;      /* 80px */
+        --space-9:  8rem;      /* 128px */
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --space-7:  5rem;      /* 80px */
+        --space-8:  7rem;      /* 112px */
+        --space-9:  10rem;     /* 160px */
+    }
+}</code></pre>
+            </div>
+
+            <h3 class="sub-heading">Using fluid spacing with clamp()</h3>
+            <div class="code-block">
+                <pre><code>/* Even better — use clamp() so spacing is always fluid */
+:root {
+    --space-sm:  clamp(0.5rem,  2vw,  1rem);
+    --space-md:  clamp(1rem,    4vw,  2rem);
+    --space-lg:  clamp(1.5rem,  6vw,  3.5rem);
+    --space-xl:  clamp(2.5rem,  8vw,  6rem);
+    --space-2xl: clamp(4rem,   12vw, 10rem);
+}
+
+/* Apply to your components */
+.section       { padding: var(--space-xl) var(--space-md); }
+.card          { padding: var(--space-md); }
+.cards-row     { gap: var(--space-sm); }
+.hero          { padding: var(--space-2xl) var(--space-lg); }
+
+/* Result: spacing grows smoothly as screen gets wider */
+/* Mobile:  section padding ≈ 2.5rem */
+/* Desktop: section padding ≈ 6rem   */
+/* No media queries needed             */</code></pre>
+            </div>
+
+            <h3 class="sub-heading">Visual spacing scale</h3>
+            <div class="spacing-scale-demo">
+                <div class="space-row"><div class="space-box s1"></div><span>--space-1 · 4px · tiny gaps</span></div>
+                <div class="space-row"><div class="space-box s2"></div><span>--space-2 · 8px · icon spacing</span></div>
+                <div class="space-row"><div class="space-box s3"></div><span>--space-3 · 12px · tight</span></div>
+                <div class="space-row"><div class="space-box s4"></div><span>--space-4 · 16px · standard gap</span></div>
+                <div class="space-row"><div class="space-box s5"></div><span>--space-5 · 24px · card padding</span></div>
+                <div class="space-row"><div class="space-box s6"></div><span>--space-6 · 32px — 40px</span></div>
+                <div class="space-row"><div class="space-box s7"></div><span>--space-7 · 48px — 80px</span></div>
+                <div class="space-row"><div class="space-box s8"></div><span>--space-8 · 64px — 112px · hero</span></div>
+            </div>
+
+            <div class="explain-grid">
+                <div class="explain-card">
+                    <div class="explain-icon">🎯</div>
+                    <h4>Consistency looks professional</h4>
+                    <p>When all spacing comes from the same scale, the page feels balanced and intentional — even if the viewer can't explain why.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">⚡</div>
+                    <h4>Change one number, update everywhere</h4>
+                    <p>Need more padding on mobile? Update <code>--space-md</code> in one place. Every component that uses it updates instantly.</p>
+                </div>
+                <div class="explain-card">
+                    <div class="explain-icon">🤝</div>
+                    <h4>Works with any design system</h4>
+                    <p>Tailwind, Material UI, Bootstrap — all use spacing scales. Learning this pattern makes switching frameworks easy.</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">⚙️</span>
+                <div>
+                    <strong>Real workflow:</strong> On every new project, the first 10 lines of CSS are: reset, box-sizing, the color system, the spacing scale. Everything else builds on top of those foundations.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             STEP 22 — MOBILE FIRST MINDSET
+        ================================= -->
+        <section id="mobilefirst" class="section">
+            <div class="section-number">22</div>
+            <h2 class="section-title">Mobile First Mindset</h2>
+            <p class="section-intro">Mobile first is not just a technique — it's a way of thinking. <strong>Build with constraints first, freedom later.</strong> It makes your layouts cleaner, simpler, and better.</p>
+
+            <div class="mf-philosophy">
+                <div class="mf-quote">
+                    "A small screen forces you to focus on what actually matters. A large screen lets you add more — not the other way around."
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Why mobile first produces better layouts</h3>
+            <div class="mf-why-grid">
+                <div class="mf-why-card">
+                    <div class="mf-why-icon">📱</div>
+                    <h4>Constraints force clarity</h4>
+                    <p>On a small screen you have no room for unnecessary elements. This forces you to keep only what's important. Your content becomes cleaner and more focused.</p>
+                </div>
+                <div class="mf-why-card">
+                    <div class="mf-why-icon">➕</div>
+                    <h4>Adding is easier than removing</h4>
+                    <p>It's much easier to add complexity to a simple layout than to simplify a complex one. Start simple — enhance for bigger screens.</p>
+                </div>
+                <div class="mf-why-card">
+                    <div class="mf-why-icon">🧠</div>
+                    <h4>Less CSS overall</h4>
+                    <p>Mobile first means you write base styles once. Then you only add CSS at larger breakpoints — never override or fight against what you already wrote.</p>
+                </div>
+                <div class="mf-why-card">
+                    <div class="mf-why-icon">⚡</div>
+                    <h4>Faster on mobile</h4>
+                    <p>Mobile devices download only the CSS they need. Desktop-first means mobile has to download and override desktop styles — wasteful and slow.</p>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Desktop first vs Mobile first — side by side</h3>
+            <div class="two-col">
+                <div class="approach-card">
+                    <div class="approach-label" style="color:#f87171; background:rgba(239,68,68,0.1);">❌ Desktop First — fighting against yourself</div>
+                    <div class="code-block small">
+                        <pre><code>/* You write complex desktop layout */
+.layout {
+    display: grid;
+    grid-template-columns: 250px 1fr 300px;
+    grid-template-rows: auto 1fr auto;
+}
+.sidebar { display: block; }
+.nav { flex-direction: row; }
+.hero { height: 600px; }
+
+/* Then you have to UNDO everything for mobile */
+@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr; /* fight */
+        grid-template-rows: auto;   /* fight */
+    }
+    .sidebar { display: none; }     /* fight */
+    .nav { flex-direction: column; }/* fight */
+    .hero { height: 300px; }        /* fight */
+}</code></pre>
+                    </div>
+                </div>
+                <div class="approach-card mobile-first">
+                    <div class="approach-label">✅ Mobile First — building naturally</div>
+                    <div class="code-block small">
+                        <pre><code>/* Start simple — mobile layout */
+.layout {
+    display: flex;
+    flex-direction: column;  /* natural stack */
+}
+.sidebar { display: none; } /* hidden on mobile */
+.nav { flex-direction: column; }
+.hero { min-height: 50vh; }
+
+/* ADD complexity for bigger screens */
+@media (min-width: 768px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+    }
+    .sidebar { display: block; }
+    .nav { flex-direction: row; }
+    .hero { min-height: 80vh; }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">The mobile first workflow — step by step</h3>
+            <div class="mf-workflow">
+                <div class="mf-step">
+                    <div class="mf-step-icon">1️⃣</div>
+                    <div class="mf-step-content">
+                        <h4>Open DevTools first</h4>
+                        <p>Before writing a single line of CSS, open DevTools and switch to mobile view (375px). You will build here first.</p>
+                    </div>
+                </div>
+                <div class="mf-step-arrow">↓</div>
+                <div class="mf-step">
+                    <div class="mf-step-icon">2️⃣</div>
+                    <div class="mf-step-content">
+                        <h4>Write ALL base styles for mobile — no media queries yet</h4>
+                        <p>Single column. Full width. Stacked elements. Simple spacing. Ask yourself: "What is the most important thing on this page?" — show that first.</p>
+                    </div>
+                </div>
+                <div class="mf-step-arrow">↓</div>
+                <div class="mf-step">
+                    <div class="mf-step-icon">3️⃣</div>
+                    <div class="mf-step-content">
+                        <h4>Slowly drag the browser wider</h4>
+                        <p>Watch where the layout starts looking too stretched or where there's wasted empty space. That's where you add your first breakpoint.</p>
+                    </div>
+                </div>
+                <div class="mf-step-arrow">↓</div>
+                <div class="mf-step">
+                    <div class="mf-step-icon">4️⃣</div>
+                    <div class="mf-step-content">
+                        <h4>Add <code>min-width</code> media query — enhance the layout</h4>
+                        <p>Add columns, show hidden elements, increase spacing. You're <strong>adding</strong> — not fixing. This is the key difference.</p>
+                    </div>
+                </div>
+                <div class="mf-step-arrow">↓</div>
+                <div class="mf-step">
+                    <div class="mf-step-icon">5️⃣</div>
+                    <div class="mf-step-content">
+                        <h4>Drag wider again — repeat</h4>
+                        <p>Keep adding breakpoints only where needed. Most projects need only 2-3 breakpoints written this way.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">What "mobile first" actually looks like in CSS</h3>
+            <div class="code-block">
+                <div class="code-label">Real page — built mobile first from scratch</div>
+                <pre><code>/* =====================
+   BASE — Mobile (no query)
+   ===================== */
+.page {
+    padding: 1rem;        /* tight on mobile */
+}
+
+.nav {
+    display: flex;
+    flex-direction: column; /* stacked */
+    gap: 0.5rem;
+}
+
+.hero-title {
+    font-size: clamp(1.8rem, 6vw, 4rem); /* fluid — no query needed */
+}
+
+.cards {
+    display: flex;
+    flex-direction: column; /* one card per row */
+    gap: 1rem;
+}
+
+.sidebar {
+    display: none;          /* hidden on mobile — not needed */
+}
+
+
+/* =====================
+   TABLET — Add columns
+   ===================== */
+@media (min-width: 768px) {
+    .page {
+        padding: 2rem;      /* more breathing room */
+    }
+
+    .nav {
+        flex-direction: row; /* now horizontal */
+        justify-content: space-between;
+    }
+
+    .cards {
+        flex-direction: row; /* 2 cards per row */
+        flex-wrap: wrap;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 0.5rem);
+    }
+}
+
+
+/* =====================
+   DESKTOP — Add more
+   ===================== */
+@media (min-width: 1024px) {
+    .page {
+        display: grid;
+        grid-template-columns: 250px 1fr; /* sidebar appears */
+        padding: 3rem;
+    }
+
+    .sidebar {
+        display: block;      /* show on desktop */
+    }
+
+    .card {
+        flex: 1 1 calc(33% - 0.7rem); /* 3 cards per row */
+    }
+}</code></pre>
+            </div>
+
+            <div class="mf-mindset-box">
+                <h3>🧠 The mindset shift</h3>
+                <div class="mf-mindset-grid">
+                    <div class="mf-mindset-item wrong">
+                        <div class="mf-mindset-label">Desktop first thinking</div>
+                        <ul>
+                            <li>"How do I make this work on mobile?"</li>
+                            <li>"How do I hide this on small screens?"</li>
+                            <li>"How do I fix this overflow?"</li>
+                            <li>"Why is everything breaking?"</li>
+                        </ul>
+                    </div>
+                    <div class="mf-mindset-item right">
+                        <div class="mf-mindset-label">Mobile first thinking</div>
+                        <ul>
+                            <li>"What does this page need on mobile?"</li>
+                            <li>"What can I add on bigger screens?"</li>
+                            <li>"What's the most important content?"</li>
+                            <li>"How do I enhance this for desktop?"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-icon">🔥</span>
+                <div>
+                    <strong>Remember this forever:</strong> Mobile first = <em>constraints first, freedom later</em>. The constraint of a small screen is not a problem — it's a tool that forces you to build better. Every professional developer works this way.
+                </div>
+            </div>
+
+            <!-- HOW TO START DESIGNING MOBILE FIRST -->
+            <h3 class="sub-heading" style="margin-top:3rem;">How to Actually Start Designing Mobile First — Step by Step</h3>
+            <p style="color:#94a3b8; font-size:0.95rem; margin-bottom:2rem;">This is the exact process. Follow this every single time you start a new project.</p>
+
+            <div class="design-steps">
+
+                <div class="design-step">
+                    <div class="design-step-top">
+                        <div class="design-step-num">01</div>
+                        <div class="design-step-title">
+                            <h4>Set up DevTools in mobile mode before writing any CSS</h4>
+                            <span class="design-step-sub">Do this first — always</span>
+                        </div>
+                    </div>
+                    <div class="design-step-body">
+                        <p>Don't start coding and then check mobile later. Open mobile view immediately so you build in the right mindset from the start.</p>
+                        <div class="design-step-actions">
+                            <div class="action-item">Press <code>F12</code> → click the 📱 icon → set width to <code>375px</code></div>
+                            <div class="action-item">This is your canvas. Everything you build first will appear here.</div>
+                            <div class="action-item">Only move to wider views when the mobile layout is done.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-step">
+                    <div class="design-step-top">
+                        <div class="design-step-num">02</div>
+                        <div class="design-step-title">
+                            <h4>Ask yourself: "What is the most important content on this page?"</h4>
+                            <span class="design-step-sub">Content first — design second</span>
+                        </div>
+                    </div>
+                    <div class="design-step-body">
+                        <p>On mobile you have very little space. Force yourself to decide what really matters. Write it down before coding anything.</p>
+                        <div class="design-step-example">
+                            <div class="dse-label">Example — a product landing page</div>
+                            <div class="dse-priority-list">
+                                <div class="dse-item rank-1">🥇 Product name + image</div>
+                                <div class="dse-item rank-2">🥈 Price + Buy button</div>
+                                <div class="dse-item rank-3">🥉 Short description</div>
+                                <div class="dse-item rank-4">4th Features list</div>
+                                <div class="dse-item rank-5">5th Reviews</div>
+                                <div class="dse-item rank-low">Last Navigation, footer, social links</div>
+                            </div>
+                            <p class="dse-note">Whatever comes first in this list — show it first on mobile. This is your layout order.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-step">
+                    <div class="design-step-top">
+                        <div class="design-step-num">03</div>
+                        <div class="design-step-title">
+                            <h4>Write your HTML in content order — most important first</h4>
+                            <span class="design-step-sub">Structure before style</span>
+                        </div>
+                    </div>
+                    <div class="design-step-body">
+                        <p>Your HTML order becomes the default mobile layout. Put things in the order they should appear on a small screen.</p>
+                        <div class="code-block">
+                            <div class="code-label">Write HTML in mobile order</div>
+                            <pre><code>&lt;body&gt;
+    &lt;nav&gt;Logo + hamburger&lt;/nav&gt;       &lt;!-- top --&gt;
+    &lt;section class="hero"&gt;
+        &lt;h1&gt;Product Name&lt;/h1&gt;         &lt;!-- first thing seen --&gt;
+        &lt;img src="product.jpg"&gt;        &lt;!-- big image --&gt;
+        &lt;p&gt;Short description&lt;/p&gt;
+        &lt;button&gt;Buy Now&lt;/button&gt;       &lt;!-- clear action --&gt;
+    &lt;/section&gt;
+    &lt;section class="features"&gt;...&lt;/section&gt;
+    &lt;section class="reviews"&gt;...&lt;/section&gt;
+    &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;
+&lt;!-- This IS your mobile layout — just stacked vertically --&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-step">
+                    <div class="design-step-top">
+                        <div class="design-step-num">04</div>
+                        <div class="design-step-title">
+                            <h4>Add your base CSS — mobile styles only, no media queries</h4>
+                            <span class="design-step-sub">Keep it simple — single column, full width</span>
+                        </div>
+                    </div>
+                    <div class="design-step-body">
+                        <p>The rule here is: <strong>everything stacks vertically, everything is full width.</strong> Don't try to do columns yet. Don't try to be fancy. Just make it readable and clean.</p>
+                        <div class="code-block">
+                            <div class="code-label">Base mobile CSS — simple and clean</div>
+                            <pre><code>/* Step 1 — Always start with these */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Step 2 — Base layout: single column, full width */
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #111;
+    padding: 0 1rem;        /* small side padding */
+}
+
+/* Step 3 — Sections breathe with padding */
+section {
+    padding: 2rem 0;
+}
+
+/* Step 4 — Typography — fluid from the start */
+h1 { font-size: clamp(1.8rem, 6vw, 3.5rem); }
+h2 { font-size: clamp(1.3rem, 4vw, 2rem); }
+p  { font-size: 1rem; max-width: 65ch; }
+
+/* Step 5 — Images fill width */
+img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+/* Step 6 — Buttons are easy to tap */
+button, .btn {
+    display: block;
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+/* Step 7 — Stacked layout — NO columns */
+.cards, .features, .layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-step">
+                    <div class="design-step-top">
+                        <div class="design-step-num">05</div>
+                        <div class="design-step-title">
+                            <h4>Check these 5 things in mobile view before moving on</h4>
+                            <span class="design-step-sub">Mobile must be perfect before going wider</span>
+                        </div>
+                    </div>
+                    <div class="design-step-body">
+                        <p>Don't move to tablet until your mobile layout passes all of these. Fix mobile first — completely.</p>
+                        <div class="design-checklist">
+                            <div class="dcl-item">
+                                <span class="dcl-icon">☐</span>
+                                <div>
+                                    <strong>Text is readable</strong>
+                                    <p>Font size at least 1rem (16px). Not too small, not overflowing the screen.</p>
+                                </div>
+                            </div>
+                            <div class="dcl-item">
+                                <span class="dcl-icon">☐</span>
+                                <div>
+                                    <strong>No horizontal scroll</strong>
+                                    <p>Scroll only vertically. Nothing goes off the right side of the screen.</p>
+                                </div>
+                            </div>
+                            <div class="dcl-item">
+                                <span class="dcl-icon">☐</span>
+                                <div>
+                                    <strong>Buttons are big enough to tap</strong>
+                                    <p>Minimum 44px tall. If you struggle to tap it with a finger — it's too small.</p>
+                                </div>
+                            </div>
+                            <div class="dcl-item">
+                                <span class="dcl-icon">☐</span>
+                                <div>
+                                    <strong>Images don't overflow</strong>
+                                    <p><code>max-width: 100%</code> is set. Images fit inside their containers.</p>
+                                </div>
+                            </div>
+                            <div class="dcl-item">
+                                <span class="dcl-icon">☐</span>
+                                <div>
+                                    <strong>Spacing feels comfortable</strong>
+                                    <p>Not too cramped. Content has room to breathe. Padding on sections.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-step">
+                    <div class="design-step-top">
+                        <div class="design-step-num">06</div>
+                        <div class="design-step-title">
+                            <h4>Slowly drag the browser wider — add breakpoints where it breaks</h4>
+                            <span class="design-step-sub">Don't guess — let the design tell you where to break</span>
+                        </div>
+                    </div>
+                    <div class="design-step-body">
+                        <p>This is the step most beginners skip. Instead of using standard breakpoints blindly, <strong>let your content decide.</strong></p>
+                        <div class="design-step-actions">
+                            <div class="action-item">Drag the DevTools preview from <code>375px</code> wider slowly</div>
+                            <div class="action-item">Stop when something looks wrong — too stretched, too much empty space, or cards look too wide</div>
+                            <div class="action-item">That's your breakpoint. Check what width you're at and write your first <code>@media (min-width: Xpx)</code></div>
+                            <div class="action-item">Add only what's needed — maybe 2 columns instead of 1, or more padding</div>
+                            <div class="action-item">Continue dragging wider — repeat</div>
+                        </div>
+                        <div class="code-block" style="margin-top:1rem;">
+                            <div class="code-label">Only add what's necessary at each breakpoint</div>
+                            <pre><code>/* Your mobile base is already written */
+/* Now just ADD what changes at tablet */
+
+@media (min-width: 700px) {
+    /* Design was getting too stretched at 700px */
+    /* So I make cards go 2 per row */
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .card { flex: 1 1 calc(50% - 0.5rem); }
+
+    body { padding: 0 2rem; } /* more padding */
+}
+
+@media (min-width: 1060px) {
+    /* Design was getting too wide at 1060px */
+    /* So I switch to 3 columns and add sidebar */
+    .card { flex: 1 1 calc(33% - 0.7rem); }
+    .page-layout { display: grid; grid-template-columns: 220px 1fr; }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-step">
+                    <div class="design-step-top">
+                        <div class="design-step-num">07</div>
+                        <div class="design-step-title">
+                            <h4>Final test — check all screen sizes from smallest to largest</h4>
+                            <span class="design-step-sub">The last thing before you're done</span>
+                        </div>
+                    </div>
+                    <div class="design-step-body">
+                        <p>Go through each size in order. Make sure every step looks right.</p>
+                        <div class="final-test-grid">
+                            <div class="ft-item">
+                                <div class="ft-size">375px</div>
+                                <div class="ft-name">📱 iPhone</div>
+                                <div class="ft-check">Mobile layout — single column</div>
+                            </div>
+                            <div class="ft-item">
+                                <div class="ft-size">480px</div>
+                                <div class="ft-name">📱 Large phone</div>
+                                <div class="ft-check">Still mobile — slightly more space</div>
+                            </div>
+                            <div class="ft-item">
+                                <div class="ft-size">768px</div>
+                                <div class="ft-name">📲 iPad</div>
+                                <div class="ft-check">Tablet layout kicks in</div>
+                            </div>
+                            <div class="ft-item">
+                                <div class="ft-size">1024px</div>
+                                <div class="ft-name">💻 Small laptop</div>
+                                <div class="ft-check">Desktop layout appears</div>
+                            </div>
+                            <div class="ft-item">
+                                <div class="ft-size">1440px</div>
+                                <div class="ft-name">🖥️ Desktop</div>
+                                <div class="ft-check">Max width container kicks in</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end design-steps -->
+
+        </section>
+
+        <!-- ================================
+             STEP 18 — CHEATSHEET
+        ================================= -->
+        <section id="cheatsheet" class="section cheatsheet-section">
+            <div class="section-number">23</div>
+            <h2 class="section-title">Cheatsheet — Quick Reference</h2>
+            <p class="section-intro">Everything on one page. Bookmark this and come back whenever you need it.</p>
+
+            <div class="cheatsheet-grid">
+
+                <div class="cheat-card">
+                    <h4>Must-Have Starting CSS</h4>
+                    <div class="code-block small">
+                        <pre><code>* { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="cheat-card">
+                    <h4>Viewport Tag</h4>
+                    <div class="code-block small">
+                        <pre><code>&lt;meta name="viewport"
+  content="width=device-width,
+  initial-scale=1.0"&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="cheat-card">
+                    <h4>Breakpoints (mobile first)</h4>
+                    <div class="code-block small">
+                        <pre><code>/* base = mobile */
+@media (min-width: 480px)  { }
+@media (min-width: 768px)  { }
+@media (min-width: 1024px) { }
+@media (min-width: 1280px) { }</code></pre>
+                    </div>
+                </div>
+
+                <div class="cheat-card">
+                    <h4>Fluid Typography</h4>
+                    <div class="code-block small">
+                        <pre><code>h1 { font-size: clamp(1.8rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 2.5rem); }
+p  { font-size: clamp(1rem, 2vw, 1.2rem); }</code></pre>
+                    </div>
+                </div>
+
+                <div class="cheat-card">
+                    <h4>Auto-Responsive Grid</h4>
+                    <div class="code-block small">
+                        <pre><code>.grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="cheat-card">
+                    <h4>Responsive Flex Cards</h4>
+                    <div class="code-block small">
+                        <pre><code>.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.card { flex: 1 1 300px; }</code></pre>
+                    </div>
+                </div>
+
+                <div class="cheat-card">
+                    <h4>Stack on Mobile Pattern</h4>
+                    <div class="code-block small">
+                        <pre><code>.layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+@media (min-width: 768px) {
+    .layout { flex-direction: row; }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="cheat-card">
+                    <h4>Responsive Card Image</h4>
+                    <div class="code-block small">
+                        <pre><code>.card {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="cheat-card">
+                    <h4>CSS Variables for Responsive</h4>
+                    <div class="code-block small">
+                        <pre><code>:root { --cols: 1; --gap: 1rem; }
+@media (min-width: 768px) {
+    :root { --cols: 2; --gap: 1.5rem; }
+}
+.grid {
+    grid-template-columns: repeat(var(--cols), 1fr);
+    gap: var(--gap);
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="cheat-card">
+                    <h4>Fix overflow-x Bug</h4>
+                    <div class="code-block small">
+                        <pre><code>/* Find culprit */
+* { outline: 1px solid red; }
+
+/* Nuclear fix */
+html, body { overflow-x: hidden; }
+
+/* Prevent it — always use */
+* { box-sizing: border-box; }
+img { max-width: 100%; }</code></pre>
+                    </div>
+                </div>
+
+                <div class="cheat-card">
+                    <h4>Units Quick Reference</h4>
+                    <div class="code-block small">
+                        <pre><code>%    → % of parent width
+rem  → × html font-size (16px default)
+em   → × parent font-size
+vh   → % of screen height
+vw   → % of screen width
+ch   → width of "0" character
+vmin → smaller of vh or vw</code></pre>
+                    </div>
+                </div>
+
+                <div class="cheat-card">
+                    <h4>Hide / Show by Screen</h4>
+                    <div class="code-block small">
+                        <pre><code>.mobile-only { display: block; }
+.desktop-only { display: none; }
+
+@media (min-width: 768px) {
+    .mobile-only  { display: none; }
+    .desktop-only { display: block; }
+}</code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SUMMARY -->
+        <section class="summary-section">
+            <h2>The Complete Responsive Checklist</h2>
+            <p style="text-align:center; color:#64748b; margin-bottom:2rem;">Before you call a layout "done" — check every single one of these.</p>
+            <div class="summary-grid">
+                <div class="summary-item"><div class="summary-icon">✅</div><p><code>&lt;meta viewport&gt;</code> tag is in the &lt;head&gt;</p></div>
+                <div class="summary-item"><div class="summary-icon">✅</div><p><code>box-sizing: border-box</code> is applied globally</p></div>
+                <div class="summary-item"><div class="summary-icon">✅</div><p><code>img { max-width: 100% }</code> is set globally</p></div>
+                <div class="summary-item"><div class="summary-icon">✅</div><p>Font sizes use <code>rem</code> or <code>clamp()</code> — not <code>px</code></p></div>
+                <div class="summary-item"><div class="summary-icon">✅</div><p>No fixed heights — using <code>min-height</code> instead</p></div>
+                <div class="summary-item"><div class="summary-icon">✅</div><p>Mobile layout looks good at 375px</p></div>
+                <div class="summary-item"><div class="summary-icon">✅</div><p>No horizontal scroll on mobile</p></div>
+                <div class="summary-item"><div class="summary-icon">✅</div><p>Navigation works and collapses on mobile</p></div>
+                <div class="summary-item"><div class="summary-icon">✅</div><p>Buttons are large enough to tap (min 44px)</p></div>
+                <div class="summary-item"><div class="summary-icon">✅</div><p>Tested at 375px, 768px, 1024px, 1440px</p></div>
+                <div class="summary-item"><div class="summary-icon">✅</div><p>Content readable — not too small, not overflowing</p></div>
+                <div class="summary-item"><div class="summary-icon">✅</div><p>Tested on a real phone (not just DevTools)</p></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>You now know everything needed to build responsive layouts like a professional.</p>
+        <p style="margin-top:0.5rem; font-size:0.75rem;">Go build something — that's how you truly learn it.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* ============================================
+   MOBILE FIRST — base styles (375px and up)
+   ============================================ */
+
+.main {
+    grid-template-columns: 1fr;
+    /* stack left and right vertically */
+    grid-template-rows: auto 1fr;
+    height: auto;
+    min-height: 100vh;
+}
+
+.right-side {
+    grid-template-columns: 1fr;
+    /* 1 column — all boxes stacked */
+    grid-template-rows: none;
+    grid-template-areas:
+        "box-1"
+        "box-5"
+        "box-2"
+        "box-3"
+        "box-4"
+        "box-6"
+        "box-7"
+        "box-8";
+}
+.left-side {
+    height: clamp(200px, 30vw, 300px);
+}
+
+.boxes {
+    height: 300px;
+    /* give each box a visible height */
+}
+.box-1{
+    height: 250px;
+}
+.box-3{
+    height: 350px;
+}
+.box-4{
+    height: 350px;
+}
+
+@media (min-width: 768px) {
+.left-side {
+        height: clamp(150px, 30vw, 300px);
+    }
+    body {
+            display: block;
+        }
+    .right-side {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "box-1 box-2"
+            "box-3 box-4"
+            "box-5 box-5"
+            "box-6 box-7"
+            "box-8 box-8";
+    }
+
+    .boxes {
+        height: 250px !important;
+    }
+}
+
+/* ============================================
+   LAPTOP — min-width: 1024px
+   ============================================ */
+@media (min-width: 1024px) {
+
+    body {
+            display: block;
+        }
+    .main {
+        grid-template-columns: auto 1fr;
+        height: 100vh;
+        
+    }
+
+    .right-side {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows:
+            minmax(0, 1fr) minmax(0, clamp(60px, 9vw, 100px)) minmax(0, clamp(50px, 7vw, 80px)) minmax(0, 1fr);
+        grid-template-areas:
+            "box-1 box-2 box-2  box-3"
+            "box-1 box-5 box-5  box-6"
+            "box-4 box-5 box-5  box-6"
+            "box-4 box-7 box-8  box-8";
+    }
+
+        .left-side {
+            /* height: clamp(150px, 30vw, 300px); */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            /* background: red; */
+        }
+
+    .boxes {
+        height: 100% !important;
+    }
+}

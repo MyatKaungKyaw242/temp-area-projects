@@ -22,13 +22,13 @@ body {
 }
 
 .main {
-    padding: 30px;
+    padding: clamp(14px, 2.5vw, 30px);
     background: black;
     height: 100vh;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr;
-    gap: 20px;
+    gap: clamp(12px, 1.5vw, 20px);
 }
 
 .left-side {
@@ -39,19 +39,19 @@ body {
 }
 
 .top-text {
-    padding: 45px 35px 10px 15px;
+    padding: clamp(20px, 3.5vw, 45px) clamp(15px, 2.5vw, 35px) 10px clamp(10px, 1.2vw, 15px);
     height: auto;
 }
 
 .top-text h2 {
     color: white;
-    font-size: 3.2rem;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
     padding-bottom: 25px;
 }
 
 .color-bar {
     display: flex;
-    height: 14px;
+    height: clamp(8px, 1.2vw, 14px);
     overflow: hidden;
     width: 80%;
 }
@@ -89,14 +89,14 @@ body {
     display: flex;
     align-items: center;
     height: auto;
-    gap: 25px;
-    padding-right: 35px;
-    padding-left: 15px;
+    gap: clamp(12px, 2vw, 25px);
+    padding-right: clamp(15px, 2.5vw, 35px);
+    padding-left: clamp(10px, 1.2vw, 15px);
 }
 
 .circle {
-    width: 60px;
-    height: 60px;
+    width: clamp(40px, 5vw, 60px);
+    height: clamp(40px, 5vw, 60px);
     border-radius: 50%;
 }
 
@@ -110,7 +110,7 @@ body {
 
 .text-span {
     color: white;
-    font-size: 1.4rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.4rem);
 }
 
 .text-span span small {
@@ -123,11 +123,15 @@ body {
     background: white;
     max-height: 100%;
     overflow: hidden;
-    padding: 25px;
+    padding: clamp(12px, 2vw, 25px);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: minmax(0,1fr) minmax(0,100px) minmax(0, 80px) minmax(0, 1fr);
-    gap: 1rem;
+    grid-template-rows:
+        minmax(0, 1fr)
+        minmax(0, clamp(60px, 9vw, 100px))
+        minmax(0, clamp(50px, 7vw, 80px))
+        minmax(0, 1fr);
+    gap: clamp(8px, 1vw, 1rem);
     grid-template-areas:
     "box-1 box-2 box-2  box-3"
     "box-1 box-5 box-5  box-6"
@@ -171,12 +175,12 @@ body {
 }
 
 .box-1-texts h2 {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 3vw, 3rem);
     opacity: 0.8;
 }
 
 .box-1-texts p {
-    font-size: 0.8rem;
+    font-size: clamp(0.65rem, 0.9vw, 0.8rem);
     opacity: 0.8;
     line-height: 1.6;
 }
@@ -208,11 +212,11 @@ body {
 
 .channel {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: clamp(0.8rem, 1.2vw, 1.2rem);
 }
 
 .box-2-text h5 {
-    font-size: 0.9rem;
+    font-size: clamp(0.7rem, 0.9vw, 0.9rem);
     font-weight: normal;
 }
 
@@ -239,7 +243,7 @@ body {
 }
 
 .box-3-texts h4 {
-    font-size: 0.9rem;
+    font-size: clamp(0.7rem, 0.9vw, 0.9rem);
     font-weight: normal;
 }
 
@@ -248,7 +252,7 @@ body {
     border-radius: 1rem;
     color: white;
     padding: 3px 20px;
-    font-size: 0.7rem;
+    font-size: clamp(0.6rem, 0.8vw, 0.7rem);
     box-shadow: 0px 0px 8px rgba(126, 137, 154, 0.5),
                 inset 0px 1px 0px rgba(255, 255, 255, 0.1);
     position: relative;
@@ -274,16 +278,22 @@ body {
     top: 20px;
     left: 10px;
     display: inline-block;
-    font-size: 0.6rem;
+    font-size: clamp(0.5rem, 0.7vw, 0.6rem);
     font-weight: 700;
     z-index: 1;
+}
+
+.box-4-text-one {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 .tag {
     padding: 5px 17px 5px 10px;
     background: white;
     border-radius: 1rem;
-    font-size: 0.7rem;
+    font-size: clamp(0.6rem, 0.8vw, 0.7rem);
 }
 
 .tag-active {
@@ -291,7 +301,7 @@ body {
     background: #441c07;
     color: white;
     border-radius: 1rem;
-    font-size: 0.7rem;
+    font-size: clamp(0.6rem, 0.8vw, 0.7rem);
     margin-left: -15px;
 }
 
@@ -304,7 +314,7 @@ body {
     bottom: 20px;
     right: 10px;
     color: white;
-    font-size: 0.6rem;
+    font-size: clamp(0.5rem, 0.7vw, 0.6rem);
     font-weight: 700;
     z-index: 1;
 }
@@ -339,12 +349,13 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     line-height: 0.9;
 }
 
 .box-5-text h1 {
-    font-size: 4rem;
+    font-size: clamp(2rem, 4vw, 4rem);
     font-weight: normal;
     word-spacing: 10px;
 }
@@ -354,7 +365,7 @@ body {
 }
 
 .box-5-text p {
-    font-size: 0.7rem;
+    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
     text-align: right;
 }
 
@@ -402,16 +413,16 @@ body {
     position: absolute;
     color: white;
     left: 10px;
-    bottom: 80px;
+    bottom: clamp(30px, 6vw, 80px);
     line-height: 1;
 }
 
 .box-8-wq {
-    font-size: 0.7rem;
+    font-size: clamp(0.55rem, 0.8vw, 0.7rem);
 }
 
 .box-8-qw {
-    font-size: 1rem;
+    font-size: clamp(0.7rem, 1vw, 1rem);
     font-weight: 700;
 }
 
