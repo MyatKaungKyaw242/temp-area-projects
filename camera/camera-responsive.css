@@ -1,6 +1,4 @@
-/* ============================================
-   MOBILE FIRST — base styles (375px and up)
-   ============================================ */
+
 
 .main {
     grid-template-columns: 1fr;
@@ -43,6 +41,9 @@
     height: 350px;
 }
 
+
+
+
 @media (min-width: 768px) {
 .left-side {
         height: clamp(150px, 30vw, 300px);
@@ -83,9 +84,7 @@
     }
 }
 
-/* ============================================
-   LAPTOP — min-width: 1024px
-   ============================================ */
+
 @media (min-width: 1024px) {
 
     body {
