@@ -1,6 +1,4 @@
-/* =============================================
-   MOBILE FIRST — base = phone (~320px+)
-   ============================================= */
+
 
 body {
     height: auto;
@@ -94,9 +92,7 @@ body {
 }
 
 
-/* =============================================
-   TABLET — min-width: 600px
-   ============================================= */
+
 
 @media (min-width: 600px) {
     body {
@@ -153,9 +149,7 @@ body {
 }
 
 
-/* =============================================
-   DESKTOP — min-width: 1024px
-   ============================================= */
+
 
 @media (min-width: 1024px) {
     body {
@@ -172,13 +166,13 @@ body {
     }
 
     .left-container {
-        min-height: clamp(500px, 70vh, 900px);
-        padding: clamp(30px, 7vw, 120px) 0 clamp(30px, 5vw, 80px) clamp(20px, 5vw, 80px);
+        min-height: clamp(500px, 80vh, 1000px);
         flex-direction: column;
         justify-content: space-between;
         flex-wrap: nowrap;
         gap: 0;
         width: auto;
+        /* background: red; */
     }
 
     .left-container h1 {
